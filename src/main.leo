@@ -8,9 +8,9 @@ program war_000000000000000000000000000.aleo {
 
     const BUY_IN_AMOUNT: u64 = 10_000_000u64;
 
-    inline get_new_deck() -> [[u128; 26]; 2] {
-        return [[1u128, 2u128, 3u128, 4u128, 5u128, 6u128, 7u128, 8u128, 9u128, 10u128, 11u128, 12u128, 13u128, 14u128, 15u128, 16u128, 17u128, 18u128, 19u128, 20u128, 21u128, 22u128, 23u128, 24u128, 25u128, 26u128],
-                [27u128, 28u128, 29u128, 30u128, 31u128, 32u128, 33u128, 34u128, 35u128, 36u128, 37u128, 38u128, 39u128, 40u128, 41u128, 42u128, 43u128, 44u128, 45u128, 46u128, 47u128, 48u128, 49u128, 50u128, 51u128, 52u128]];
+    inline get_new_deck() -> [[u128; 14]; 2] {
+        return [[1u128, 2u128, 3u128, 4u128, 5u128, 6u128, 7u128, 8u128, 9u128, 10u128, 11u128, 12u128, 13u128, 14u128],
+                [15u128, 16u128, 17u128, 18u128, 19u128, 20u128, 21u128, 22u128, 23u128, 24u128, 25u128, 26u128, 27u128, 28u128]];
     }
     record Keys {
         owner: address,
@@ -21,8 +21,8 @@ program war_000000000000000000000000000.aleo {
     struct Game {
         player1: address,
         player2: address,
-        cards_p1: [u128; 26],
-        cards_p2: [u128; 26],
+        cards_p1: [u128; 14],
+        cards_p2: [u128; 14],
         chips_p1: i8,
         chips_p2: i8,
         turn: u8,
@@ -45,7 +45,7 @@ program war_000000000000000000000000000.aleo {
 
 
     async transition create_game(game_id: u32, element1: i8, element2: i8, element3: i8, e: u128, d: u128, n: u128) -> (Keys, Future) {
-        let deck: [[u128; 26]; 2] = zk_deck_shuffle.aleo/full_shuffle(element1, element2, element3, zk_sra_encryption.aleo/encrypt_deck(e, n, get_new_deck()));
+        let deck: [[u128; 14]; 2] = zk_deck_shuffle.aleo/full_shuffle(element1, element2, element3, zk_sra_encryption.aleo/encrypt_deck(e, n, get_new_deck()));
         let keys: Keys = Keys {
             owner: self.caller,
             e: e,
@@ -55,7 +55,7 @@ program war_000000000000000000000000000.aleo {
         let transfer_future: Future = credits.aleo/transfer_public_as_signer(self.signer, BUY_IN_AMOUNT);
         return (keys, finalize_create_game(game_id, deck, self.caller, transfer_future));
     }
-    async function finalize_create_game(game_id: u32, deck: [[u128; 26]; 2], caller: address, transfer_future: Future) {
+    async function finalize_create_game(game_id: u32, deck: [[u128; 14]; 2], caller: address, transfer_future: Future) {
         transfer_future.await();
         let game: Game = Game {
             player1: caller,
@@ -66,8 +66,8 @@ program war_000000000000000000000000000.aleo {
             chips_p2: 32i8,
             turn: 0u8,
             war: 1u8,
-            remaining_cards_p1: 26u8,
-            remaining_cards_p2: 26u8,
+            remaining_cards_p1: 14u8,
+            remaining_cards_p2: 14u8,
 
             first_move_done: false,
 
@@ -85,8 +85,8 @@ program war_000000000000000000000000000.aleo {
 
 
 
-    async transition join_game(game_id: u32, deck: [[u128; 26]; 2], element1: i8, element2: i8, element3: i8, e: u128, d: u128, n: u128) -> (Keys, Future) {
-        let new_deck: [[u128; 26]; 2] = zk_deck_shuffle.aleo/full_shuffle(element1, element2, element3, zk_sra_encryption.aleo/encrypt_deck(e, n, deck)); 
+    async transition join_game(game_id: u32, deck: [[u128; 14]; 2], element1: i8, element2: i8, element3: i8, e: u128, d: u128, n: u128) -> (Keys, Future) {
+        let new_deck: [[u128; 14]; 2] = zk_deck_shuffle.aleo/full_shuffle(element1, element2, element3, zk_sra_encryption.aleo/encrypt_deck(e, n, deck)); 
         let keys: Keys = Keys {
             owner: self.caller,
             e: e,
@@ -96,7 +96,7 @@ program war_000000000000000000000000000.aleo {
         let transfer_future: Future = credits.aleo/transfer_public_as_signer(self.signer, BUY_IN_AMOUNT);
         return (keys, finalize_join_game(game_id, deck, new_deck, self.caller, transfer_future));
     }
-    async function finalize_join_game(game_id: u32, deck: [[u128; 26]; 2], new_deck: [[u128; 26]; 2], caller: address, transfer_future: Future) {
+    async function finalize_join_game(game_id: u32, deck: [[u128; 14]; 2], new_deck: [[u128; 14]; 2], caller: address, transfer_future: Future) {
         transfer_future.await();
         let game: Game = Mapping::get(games, game_id);    
         assert(game.cards_p1 == deck[0u8]);
@@ -224,19 +224,7 @@ program war_000000000000000000000000000.aleo {
     async function finalize_p1_reveal_p2(game_id: u32, caller: address, card_encrypted: u128, card_decrypted: u128) {
         let game: Game = Mapping::get(games, game_id);
 
-        let card_to_decrypt: u128 = (game.remaining_cards_p1 == 26u8) ? game.cards_p1[25u8] : 
-                                     (game.remaining_cards_p1 == 25u8) ? game.cards_p1[24u8] :
-                                     (game.remaining_cards_p1 == 24u8) ? game.cards_p1[23u8] :
-                                     (game.remaining_cards_p1 == 23u8) ? game.cards_p1[22u8] :
-                                     (game.remaining_cards_p1 == 22u8) ? game.cards_p1[21u8] :
-                                     (game.remaining_cards_p1 == 21u8) ? game.cards_p1[20u8] :
-                                     (game.remaining_cards_p1 == 20u8) ? game.cards_p1[19u8] :
-                                     (game.remaining_cards_p1 == 19u8) ? game.cards_p1[18u8] :
-                                     (game.remaining_cards_p1 == 18u8) ? game.cards_p1[17u8] :
-                                     (game.remaining_cards_p1 == 17u8) ? game.cards_p1[16u8] :
-                                     (game.remaining_cards_p1 == 16u8) ? game.cards_p1[15u8] :
-                                     (game.remaining_cards_p1 == 15u8) ? game.cards_p1[14u8] :
-                                     (game.remaining_cards_p1 == 14u8) ? game.cards_p1[13u8] :
+        let card_to_decrypt: u128 = (game.remaining_cards_p1 == 14u8) ? game.cards_p1[13u8] : 
                                      (game.remaining_cards_p1 == 13u8) ? game.cards_p1[12u8] :
                                      (game.remaining_cards_p1 == 12u8) ? game.cards_p1[11u8] :
                                      (game.remaining_cards_p1 == 11u8) ? game.cards_p1[10u8] :
@@ -255,7 +243,7 @@ program war_000000000000000000000000000.aleo {
         assert(card_encrypted == card_to_decrypt);
         assert(game.p1_must_reveal_p2 == true);
 
-        let new_cards_p1: [u128; 26] = [
+        let new_cards_p1: [u128; 14] = [
             (game.remaining_cards_p1 == 1u8) ? card_decrypted : game.cards_p1[0u8],
             (game.remaining_cards_p1 == 2u8) ? card_decrypted : game.cards_p1[1u8],
             (game.remaining_cards_p1 == 3u8) ? card_decrypted : game.cards_p1[2u8],
@@ -269,19 +257,7 @@ program war_000000000000000000000000000.aleo {
             (game.remaining_cards_p1 == 11u8) ? card_decrypted : game.cards_p1[10u8],
             (game.remaining_cards_p1 == 12u8) ? card_decrypted : game.cards_p1[11u8],
             (game.remaining_cards_p1 == 13u8) ? card_decrypted : game.cards_p1[12u8],
-            (game.remaining_cards_p1 == 14u8) ? card_decrypted : game.cards_p1[13u8],
-            (game.remaining_cards_p1 == 15u8) ? card_decrypted : game.cards_p1[14u8],
-            (game.remaining_cards_p1 == 16u8) ? card_decrypted : game.cards_p1[15u8],
-            (game.remaining_cards_p1 == 17u8) ? card_decrypted : game.cards_p1[16u8],
-            (game.remaining_cards_p1 == 18u8) ? card_decrypted : game.cards_p1[17u8],
-            (game.remaining_cards_p1 == 19u8) ? card_decrypted : game.cards_p1[18u8],
-            (game.remaining_cards_p1 == 20u8) ? card_decrypted : game.cards_p1[19u8],
-            (game.remaining_cards_p1 == 21u8) ? card_decrypted : game.cards_p1[20u8],
-            (game.remaining_cards_p1 == 22u8) ? card_decrypted : game.cards_p1[21u8],
-            (game.remaining_cards_p1 == 23u8) ? card_decrypted : game.cards_p1[22u8],
-            (game.remaining_cards_p1 == 24u8) ? card_decrypted : game.cards_p1[23u8],
-            (game.remaining_cards_p1 == 25u8) ? card_decrypted : game.cards_p1[24u8],
-            (game.remaining_cards_p1 == 26u8) ? card_decrypted : game.cards_p1[25u8]
+            (game.remaining_cards_p1 == 14u8) ? card_decrypted : game.cards_p1[13u8]
         ];
 
         let new_game: Game = Game {
@@ -320,19 +296,7 @@ program war_000000000000000000000000000.aleo {
     async function finalize_p1_reveal_p1(game_id: u32, caller: address, card_encrypted: u128, card_decrypted: u128) {
         let game: Game = Mapping::get(games, game_id);
 
-        let card_to_decrypt: u128 = (game.remaining_cards_p1 == 26u8) ? game.cards_p1[25u8] : 
-                                     (game.remaining_cards_p1 == 25u8) ? game.cards_p1[24u8] :
-                                     (game.remaining_cards_p1 == 24u8) ? game.cards_p1[23u8] :
-                                     (game.remaining_cards_p1 == 23u8) ? game.cards_p1[22u8] :
-                                     (game.remaining_cards_p1 == 22u8) ? game.cards_p1[21u8] :
-                                     (game.remaining_cards_p1 == 21u8) ? game.cards_p1[20u8] :
-                                     (game.remaining_cards_p1 == 20u8) ? game.cards_p1[19u8] :
-                                     (game.remaining_cards_p1 == 19u8) ? game.cards_p1[18u8] :
-                                     (game.remaining_cards_p1 == 18u8) ? game.cards_p1[17u8] :
-                                     (game.remaining_cards_p1 == 17u8) ? game.cards_p1[16u8] :
-                                     (game.remaining_cards_p1 == 16u8) ? game.cards_p1[15u8] :
-                                     (game.remaining_cards_p1 == 15u8) ? game.cards_p1[14u8] :
-                                     (game.remaining_cards_p1 == 14u8) ? game.cards_p1[13u8] :
+        let card_to_decrypt: u128 = (game.remaining_cards_p1 == 14u8) ? game.cards_p1[13u8] :
                                      (game.remaining_cards_p1 == 13u8) ? game.cards_p1[12u8] :
                                      (game.remaining_cards_p1 == 12u8) ? game.cards_p1[11u8] :
                                      (game.remaining_cards_p1 == 11u8) ? game.cards_p1[10u8] :
@@ -352,7 +316,7 @@ program war_000000000000000000000000000.aleo {
         assert(game.p1_must_reveal_p1 == true);
         assert(game.must_compare);
 
-        let new_cards_p1: [u128; 26] = [
+        let new_cards_p1: [u128; 14] = [
             (game.remaining_cards_p1 == 1u8) ? card_decrypted : game.cards_p1[0u8],
             (game.remaining_cards_p1 == 2u8) ? card_decrypted : game.cards_p1[1u8],
             (game.remaining_cards_p1 == 3u8) ? card_decrypted : game.cards_p1[2u8],
@@ -366,19 +330,7 @@ program war_000000000000000000000000000.aleo {
             (game.remaining_cards_p1 == 11u8) ? card_decrypted : game.cards_p1[10u8],
             (game.remaining_cards_p1 == 12u8) ? card_decrypted : game.cards_p1[11u8],
             (game.remaining_cards_p1 == 13u8) ? card_decrypted : game.cards_p1[12u8],
-            (game.remaining_cards_p1 == 14u8) ? card_decrypted : game.cards_p1[13u8],
-            (game.remaining_cards_p1 == 15u8) ? card_decrypted : game.cards_p1[14u8],
-            (game.remaining_cards_p1 == 16u8) ? card_decrypted : game.cards_p1[15u8],
-            (game.remaining_cards_p1 == 17u8) ? card_decrypted : game.cards_p1[16u8],
-            (game.remaining_cards_p1 == 18u8) ? card_decrypted : game.cards_p1[17u8],
-            (game.remaining_cards_p1 == 19u8) ? card_decrypted : game.cards_p1[18u8],
-            (game.remaining_cards_p1 == 20u8) ? card_decrypted : game.cards_p1[19u8],
-            (game.remaining_cards_p1 == 21u8) ? card_decrypted : game.cards_p1[20u8],
-            (game.remaining_cards_p1 == 22u8) ? card_decrypted : game.cards_p1[21u8],
-            (game.remaining_cards_p1 == 23u8) ? card_decrypted : game.cards_p1[22u8],
-            (game.remaining_cards_p1 == 24u8) ? card_decrypted : game.cards_p1[23u8],
-            (game.remaining_cards_p1 == 25u8) ? card_decrypted : game.cards_p1[24u8],
-            (game.remaining_cards_p1 == 26u8) ? card_decrypted : game.cards_p1[25u8]
+            (game.remaining_cards_p1 == 14u8) ? card_decrypted : game.cards_p1[13u8]
         ];
 
         let new_game: Game = Game {
@@ -420,19 +372,7 @@ program war_000000000000000000000000000.aleo {
 
         assert(game.must_compare);
 
-        let top_card_p1: u128 = (game.remaining_cards_p1 == 26u8) ? game.cards_p1[25u8] : 
-                                (game.remaining_cards_p1 == 25u8) ? game.cards_p1[24u8] :
-                                (game.remaining_cards_p1 == 24u8) ? game.cards_p1[23u8] :
-                                (game.remaining_cards_p1 == 23u8) ? game.cards_p1[22u8] :
-                                (game.remaining_cards_p1 == 22u8) ? game.cards_p1[21u8] :
-                                (game.remaining_cards_p1 == 21u8) ? game.cards_p1[20u8] :
-                                (game.remaining_cards_p1 == 20u8) ? game.cards_p1[19u8] :
-                                (game.remaining_cards_p1 == 19u8) ? game.cards_p1[18u8] :
-                                (game.remaining_cards_p1 == 18u8) ? game.cards_p1[17u8] :
-                                (game.remaining_cards_p1 == 17u8) ? game.cards_p1[16u8] :
-                                (game.remaining_cards_p1 == 16u8) ? game.cards_p1[15u8] :
-                                (game.remaining_cards_p1 == 15u8) ? game.cards_p1[14u8] :
-                                (game.remaining_cards_p1 == 14u8) ? game.cards_p1[13u8] :
+        let top_card_p1: u128 = (game.remaining_cards_p1 == 14u8) ? game.cards_p1[13u8] : 
                                 (game.remaining_cards_p1 == 13u8) ? game.cards_p1[12u8] :
                                 (game.remaining_cards_p1 == 12u8) ? game.cards_p1[11u8] :
                                 (game.remaining_cards_p1 == 11u8) ? game.cards_p1[10u8] :
@@ -447,19 +387,7 @@ program war_000000000000000000000000000.aleo {
                                 (game.remaining_cards_p1 == 2u8) ? game.cards_p1[1u8] :
                                 game.cards_p1[0u8];
 
-        let top_card_p2: u128 = (game.remaining_cards_p2 == 26u8) ? game.cards_p2[25u8] : 
-                                (game.remaining_cards_p2 == 25u8) ? game.cards_p2[24u8] :
-                                (game.remaining_cards_p2 == 24u8) ? game.cards_p2[23u8] :
-                                (game.remaining_cards_p2 == 23u8) ? game.cards_p2[22u8] :
-                                (game.remaining_cards_p2 == 22u8) ? game.cards_p2[21u8] :
-                                (game.remaining_cards_p2 == 21u8) ? game.cards_p2[20u8] :
-                                (game.remaining_cards_p2 == 20u8) ? game.cards_p2[19u8] :
-                                (game.remaining_cards_p2 == 19u8) ? game.cards_p2[18u8] :
-                                (game.remaining_cards_p2 == 18u8) ? game.cards_p2[17u8] :
-                                (game.remaining_cards_p2 == 17u8) ? game.cards_p2[16u8] :
-                                (game.remaining_cards_p2 == 16u8) ? game.cards_p2[15u8] :
-                                (game.remaining_cards_p2 == 15u8) ? game.cards_p2[14u8] :
-                                (game.remaining_cards_p2 == 14u8) ? game.cards_p2[13u8] :
+        let top_card_p2: u128 = (game.remaining_cards_p2 == 14u8) ? game.cards_p2[13u8] : 
                                 (game.remaining_cards_p2 == 13u8) ? game.cards_p2[12u8] :
                                 (game.remaining_cards_p2 == 12u8) ? game.cards_p2[11u8] :
                                 (game.remaining_cards_p2 == 11u8) ? game.cards_p2[10u8] :
