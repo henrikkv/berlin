@@ -1,13 +1,12 @@
 import zk_deck_shuffle.aleo;
 import zk_sra_encryption.aleo;
-import token_registry.aleo;
+import credits.aleo;
 
 program war_000000000000000000000000000.aleo {
 
     mapping games: u32 => Game;
 
-    const CREDITS_TOKEN_ID: field = 3443843282313283355522573239085696902919850365217539366784739393210722344986field;
-    const BUY_IN_AMOUNT: u128 = 10_000_000u128; // 10 credits with 6 decimals
+    const BUY_IN_AMOUNT: u64 = 10_000_000u64;
 
     inline get_new_deck() -> [[u128; 26]; 2] {
         return [[1u128, 2u128, 3u128, 4u128, 5u128, 6u128, 7u128, 8u128, 9u128, 10u128, 11u128, 12u128, 13u128, 14u128, 15u128, 16u128, 17u128, 18u128, 19u128, 20u128, 21u128, 22u128, 23u128, 24u128, 25u128, 26u128],
@@ -53,7 +52,7 @@ program war_000000000000000000000000000.aleo {
             d: d,
             n: n,
         };
-        let transfer_future: Future = token_registry.aleo/transfer_public_as_signer(CREDITS_TOKEN_ID, self.signer, BUY_IN_AMOUNT);
+        let transfer_future: Future = credits.aleo/transfer_public_as_signer(self.signer, BUY_IN_AMOUNT);
         return (keys, finalize_create_game(game_id, deck, self.caller, transfer_future));
     }
     async function finalize_create_game(game_id: u32, deck: [[u128; 26]; 2], caller: address, transfer_future: Future) {
@@ -94,7 +93,7 @@ program war_000000000000000000000000000.aleo {
             d: d,
             n: n,
         };
-        let transfer_future: Future = token_registry.aleo/transfer_public_as_signer(CREDITS_TOKEN_ID, self.signer, BUY_IN_AMOUNT);
+        let transfer_future: Future = credits.aleo/transfer_public_as_signer(self.signer, BUY_IN_AMOUNT);
         return (keys, finalize_join_game(game_id, deck, new_deck, self.caller, transfer_future));
     }
     async function finalize_join_game(game_id: u32, deck: [[u128; 26]; 2], new_deck: [[u128; 26]; 2], caller: address, transfer_future: Future) {
@@ -518,7 +517,7 @@ program war_000000000000000000000000000.aleo {
 
     async transition claim_prize(game_id: u32) -> Future {
         let caller: address = self.caller;
-        let transfer_future: Future = token_registry.aleo/transfer_public_as_signer(CREDITS_TOKEN_ID, caller, BUY_IN_AMOUNT * 2u128);
+        let transfer_future: Future = credits.aleo/transfer_public_as_signer(caller, BUY_IN_AMOUNT * 2u64);
         return finalize_claim_prize(game_id, caller, transfer_future);
     }
     async function finalize_claim_prize(game_id: u32, caller: address, transfer_future: Future) {

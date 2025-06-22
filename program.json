@@ -15,7 +15,7 @@
       "path": "imports/zk_sra_encryption/"
     },
     {
-      "name": "token_registry.aleo",
+      "name": "credits.aleo",
       "location": "network",
       "path": null
     }

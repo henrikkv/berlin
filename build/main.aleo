@@ -1,7 +1,6 @@
 import zk_deck_shuffle.aleo;
 import zk_sra_encryption.aleo;
 import credits.aleo;
-import token_registry.aleo;
 program war_000000000000000000000000000.aleo;
 
 record Keys:
@@ -9,21 +8,6 @@ record Keys:
     e as u128.private;
     d as u128.private;
     n as u128.private;
-
-struct TokenMetadata:
-    token_id as field;
-    name as u128;
-    symbol as u128;
-    decimals as u8;
-    supply as u128;
-    max_supply as u128;
-    admin as address;
-    external_authorization_required as boolean;
-    external_authorization_party as address;
-
-struct TokenOwner:
-    account as address;
-    token_id as field;
 
 struct Game:
     player1 as address;
@@ -62,7 +46,7 @@ function create_game:
     call zk_sra_encryption.aleo/encrypt_deck r4 r6 r9 into r10;
     call zk_deck_shuffle.aleo/full_shuffle r1 r2 r3 r10 into r11;
     cast self.caller r4 r5 r6 into r12 as Keys.record;
-    call token_registry.aleo/transfer_public_as_signer 3443843282313283355522573239085696902919850365217539366784739393210722344986field self.signer 10000000u128 into r13;
+    call credits.aleo/transfer_public_as_signer self.signer 10000000u64 into r13;
     async create_game r0 r11 self.caller r13 into r14;
     output r12 as Keys.record;
     output r14 as war_000000000000000000000000000.aleo/create_game.future;
@@ -71,7 +55,7 @@ finalize create_game:
     input r0 as u32.public;
     input r1 as [[u128; 26u32]; 2u32].public;
     input r2 as address.public;
-    input r3 as token_registry.aleo/transfer_public_as_signer.future;
+    input r3 as credits.aleo/transfer_public_as_signer.future;
     await r3;
     cast r2 aleo1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq3ljyzc r1[0u32] r1[1u32] 32i8 32i8 0u8 1u8 26u8 26u8 false false false false false false 0u8 into r4 as Game;
     set r4 into games[r0];
@@ -88,7 +72,7 @@ function join_game:
     call zk_sra_encryption.aleo/encrypt_deck r5 r7 r1 into r8;
     call zk_deck_shuffle.aleo/full_shuffle r2 r3 r4 r8 into r9;
     cast self.caller r5 r6 r7 into r10 as Keys.record;
-    call token_registry.aleo/transfer_public_as_signer 3443843282313283355522573239085696902919850365217539366784739393210722344986field self.signer 10000000u128 into r11;
+    call credits.aleo/transfer_public_as_signer self.signer 10000000u64 into r11;
     async join_game r0 r1 r9 self.caller r11 into r12;
     output r10 as Keys.record;
     output r12 as war_000000000000000000000000000.aleo/join_game.future;
@@ -98,7 +82,7 @@ finalize join_game:
     input r1 as [[u128; 26u32]; 2u32].public;
     input r2 as [[u128; 26u32]; 2u32].public;
     input r3 as address.public;
-    input r4 as token_registry.aleo/transfer_public_as_signer.future;
+    input r4 as credits.aleo/transfer_public_as_signer.future;
     await r4;
     get games[r0] into r5;
     is.eq r5.cards_p1 r1[0u32] into r6;
@@ -617,14 +601,14 @@ finalize compare_cards:
 
 function claim_prize:
     input r0 as u32.private;
-    call token_registry.aleo/transfer_public_as_signer 3443843282313283355522573239085696902919850365217539366784739393210722344986field self.caller 20000000u128 into r1;
+    call credits.aleo/transfer_public_as_signer self.caller 20000000u64 into r1;
     async claim_prize r0 self.caller r1 into r2;
     output r2 as war_000000000000000000000000000.aleo/claim_prize.future;
 
 finalize claim_prize:
     input r0 as u32.public;
     input r1 as address.public;
-    input r2 as token_registry.aleo/transfer_public_as_signer.future;
+    input r2 as credits.aleo/transfer_public_as_signer.future;
     get games[r0] into r3;
     is.eq r3.winner 1u8 into r4;
     is.eq r1 r3.player1 into r5;
