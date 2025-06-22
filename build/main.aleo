@@ -1,12 +1,29 @@
 import zk_deck_shuffle.aleo;
 import zk_sra_encryption.aleo;
-program war.aleo;
+import credits.aleo;
+import token_registry.aleo;
+program war_000000000000000000000000000.aleo;
 
 record Keys:
     owner as address.private;
     e as u128.private;
     d as u128.private;
     n as u128.private;
+
+struct TokenMetadata:
+    token_id as field;
+    name as u128;
+    symbol as u128;
+    decimals as u8;
+    supply as u128;
+    max_supply as u128;
+    admin as address;
+    external_authorization_required as boolean;
+    external_authorization_party as address;
+
+struct TokenOwner:
+    account as address;
+    token_id as field;
 
 struct Game:
     player1 as address;
@@ -25,6 +42,7 @@ struct Game:
     p2_must_reveal_p2 as boolean;
     p2_must_reveal_p1 as boolean;
     must_compare as boolean;
+    winner as u8;
 
 mapping games:
     key as u32.public;
@@ -44,16 +62,19 @@ function create_game:
     call zk_sra_encryption.aleo/encrypt_deck r4 r6 r9 into r10;
     call zk_deck_shuffle.aleo/full_shuffle r1 r2 r3 r10 into r11;
     cast self.caller r4 r5 r6 into r12 as Keys.record;
-    async create_game r0 r11 self.caller into r13;
+    call token_registry.aleo/transfer_public_as_signer 3443843282313283355522573239085696902919850365217539366784739393210722344986field self.signer 10000000u128 into r13;
+    async create_game r0 r11 self.caller r13 into r14;
     output r12 as Keys.record;
-    output r13 as war.aleo/create_game.future;
+    output r14 as war_000000000000000000000000000.aleo/create_game.future;
 
 finalize create_game:
     input r0 as u32.public;
     input r1 as [[u128; 26u32]; 2u32].public;
     input r2 as address.public;
-    cast r2 aleo1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq3ljyzc r1[0u32] r1[1u32] 32i8 32i8 0u8 1u8 26u8 26u8 false false false false false false into r3 as Game;
-    set r3 into games[r0];
+    input r3 as token_registry.aleo/transfer_public_as_signer.future;
+    await r3;
+    cast r2 aleo1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq3ljyzc r1[0u32] r1[1u32] 32i8 32i8 0u8 1u8 26u8 26u8 false false false false false false 0u8 into r4 as Game;
+    set r4 into games[r0];
 
 function join_game:
     input r0 as u32.private;
@@ -67,27 +88,30 @@ function join_game:
     call zk_sra_encryption.aleo/encrypt_deck r5 r7 r1 into r8;
     call zk_deck_shuffle.aleo/full_shuffle r2 r3 r4 r8 into r9;
     cast self.caller r5 r6 r7 into r10 as Keys.record;
-    async join_game r0 r1 r9 self.caller into r11;
+    call token_registry.aleo/transfer_public_as_signer 3443843282313283355522573239085696902919850365217539366784739393210722344986field self.signer 10000000u128 into r11;
+    async join_game r0 r1 r9 self.caller r11 into r12;
     output r10 as Keys.record;
-    output r11 as war.aleo/join_game.future;
+    output r12 as war_000000000000000000000000000.aleo/join_game.future;
 
 finalize join_game:
     input r0 as u32.public;
     input r1 as [[u128; 26u32]; 2u32].public;
     input r2 as [[u128; 26u32]; 2u32].public;
     input r3 as address.public;
-    get games[r0] into r4;
-    is.eq r4.cards_p1 r1[0u32] into r5;
-    assert.eq r5 true;
-    is.eq r4.cards_p2 r1[1u32] into r6;
+    input r4 as token_registry.aleo/transfer_public_as_signer.future;
+    await r4;
+    get games[r0] into r5;
+    is.eq r5.cards_p1 r1[0u32] into r6;
     assert.eq r6 true;
-    cast r4.player1 r4.player2 r2[0u32] r2[1u32] r4.chips_p1 r4.chips_p2 1u8 1u8 r4.remaining_cards_p1 r4.remaining_cards_p2 false false true false true false into r7 as Game;
-    set r7 into games[r0];
+    is.eq r5.cards_p2 r1[1u32] into r7;
+    assert.eq r7 true;
+    cast r5.player1 r3 r2[0u32] r2[1u32] r5.chips_p1 r5.chips_p2 1u8 1u8 r5.remaining_cards_p1 r5.remaining_cards_p2 false false true false true false 0u8 into r8 as Game;
+    set r8 into games[r0];
 
 function bet:
     input r0 as u32.private;
     async bet r0 self.caller into r1;
-    output r1 as war.aleo/bet.future;
+    output r1 as war_000000000000000000000000000.aleo/bet.future;
 
 finalize bet:
     input r0 as u32.public;
@@ -109,13 +133,13 @@ finalize bet:
     ternary r2.first_move_done true false into r13;
     ternary r2.first_move_done true false into r14;
     ternary r2.first_move_done true false into r15;
-    cast r2.player1 r2.player2 r2.cards_p1 r2.cards_p2 r2.chips_p1 r2.chips_p2 r2.turn r2.war r2.remaining_cards_p1 r2.remaining_cards_p2 false r13 false r14 false r15 into r16 as Game;
+    cast r2.player1 r2.player2 r2.cards_p1 r2.cards_p2 r2.chips_p1 r2.chips_p2 r2.turn r2.war r2.remaining_cards_p1 r2.remaining_cards_p2 false r13 false r14 false r15 0u8 into r16 as Game;
     set r16 into games[r0];
 
 function fold:
     input r0 as u32.private;
     async fold r0 self.caller into r1;
-    output r1 as war.aleo/fold.future;
+    output r1 as war_000000000000000000000000000.aleo/fold.future;
 
 finalize fold:
     input r0 as u32.public;
@@ -179,7 +203,7 @@ finalize fold:
     is.eq r1 r2.player2 into r54;
     and r4 r54 into r55;
     ternary r55 true false into r56;
-    cast r2.player1 r2.player2 r2.cards_p1 r2.cards_p2 r27 r39 r40 0u8 r44 r49 false false r53 false r56 false into r57 as Game;
+    cast r2.player1 r2.player2 r2.cards_p1 r2.cards_p2 r27 r39 r40 1u8 r44 r49 false false r53 false r56 false 0u8 into r57 as Game;
     set r57 into games[r0];
 
 function p1_reveal_p2:
@@ -190,7 +214,7 @@ function p1_reveal_p2:
     async p1_reveal_p2 r0 self.caller r1 r3 into r4;
     cast r2.owner r2.e r2.d r2.n into r5 as Keys.record;
     output r5 as Keys.record;
-    output r4 as war.aleo/p1_reveal_p2.future;
+    output r4 as war_000000000000000000000000000.aleo/p1_reveal_p2.future;
 
 finalize p1_reveal_p2:
     input r0 as u32.public;
@@ -252,7 +276,7 @@ finalize p1_reveal_p2:
     assert.eq r55 true;
     is.eq r2 r54 into r56;
     assert.eq r56 true;
-    is.eq r4.p1_must_reveal_p1 true into r57;
+    is.eq r4.p1_must_reveal_p2 true into r57;
     assert.eq r57 true;
     is.eq r4.remaining_cards_p1 1u8 into r58;
     ternary r58 r3 r4.cards_p1[0u32] into r59;
@@ -307,7 +331,7 @@ finalize p1_reveal_p2:
     is.eq r4.remaining_cards_p1 26u8 into r108;
     ternary r108 r3 r4.cards_p1[25u32] into r109;
     cast r59 r61 r63 r65 r67 r69 r71 r73 r75 r77 r79 r81 r83 r85 r87 r89 r91 r93 r95 r97 r99 r101 r103 r105 r107 r109 into r110 as [u128; 26u32];
-    cast r4.player1 r4.player2 r110 r4.cards_p2 r4.chips_p1 r4.chips_p2 r4.turn r4.war r4.remaining_cards_p1 r4.remaining_cards_p2 true false r4.p1_must_reveal_p2 r4.p2_must_reveal_p2 r4.p2_must_reveal_p1 false into r111 as Game;
+    cast r4.player1 r4.player2 r110 r4.cards_p2 r4.chips_p1 r4.chips_p2 r4.turn r4.war r4.remaining_cards_p1 r4.remaining_cards_p2 true false r4.p1_must_reveal_p2 r4.p2_must_reveal_p2 r4.p2_must_reveal_p1 false 0u8 into r111 as Game;
     set r111 into games[r0];
 
 function p1_reveal_p1:
@@ -318,7 +342,7 @@ function p1_reveal_p1:
     async p1_reveal_p1 r0 self.caller r1 r3 into r4;
     cast r2.owner r2.e r2.d r2.n into r5 as Keys.record;
     output r5 as Keys.record;
-    output r4 as war.aleo/p1_reveal_p1.future;
+    output r4 as war_000000000000000000000000000.aleo/p1_reveal_p1.future;
 
 finalize p1_reveal_p1:
     input r0 as u32.public;
@@ -436,13 +460,13 @@ finalize p1_reveal_p1:
     is.eq r4.remaining_cards_p1 26u8 into r108;
     ternary r108 r3 r4.cards_p1[25u32] into r109;
     cast r59 r61 r63 r65 r67 r69 r71 r73 r75 r77 r79 r81 r83 r85 r87 r89 r91 r93 r95 r97 r99 r101 r103 r105 r107 r109 into r110 as [u128; 26u32];
-    cast r4.player1 r4.player2 r110 r4.cards_p2 r4.chips_p1 r4.chips_p2 r4.turn r4.war r4.remaining_cards_p1 r4.remaining_cards_p2 true false r4.p1_must_reveal_p2 r4.p2_must_reveal_p2 r4.p2_must_reveal_p1 true into r111 as Game;
+    cast r4.player1 r4.player2 r110 r4.cards_p2 r4.chips_p1 r4.chips_p2 r4.turn r4.war r4.remaining_cards_p1 r4.remaining_cards_p2 true false false r4.p2_must_reveal_p2 false true 0u8 into r111 as Game;
     set r111 into games[r0];
 
 function compare_cards:
     input r0 as u32.private;
     async compare_cards r0 into r1;
-    output r1 as war.aleo/compare_cards.future;
+    output r1 as war_000000000000000000000000000.aleo/compare_cards.future;
 
 finalize compare_cards:
     input r0 as u32.public;
@@ -574,11 +598,44 @@ finalize compare_cards:
     sub r1.chips_p2 r120 into r121;
     ternary r106 r121 r1.chips_p2 into r122;
     ternary r107 r118 r122 into r123;
-    add r1.turn 1u8 into r124;
-    or r106 r107 into r125;
-    mul r1.war 2u8 into r126;
-    ternary r125 1u8 r126 into r127;
-    sub r1.remaining_cards_p1 1u8 into r128;
-    sub r1.remaining_cards_p2 1u8 into r129;
-    cast r1.player1 r1.player2 r1.cards_p1 r1.cards_p2 r115 r123 r124 r127 r128 r129 false false true false true false into r130 as Game;
-    set r130 into games[r0];
+    sub r1.remaining_cards_p1 1u8 into r124;
+    sub r1.remaining_cards_p2 1u8 into r125;
+    lte r123 0i8 into r126;
+    is.eq r125 0u8 into r127;
+    or r126 r127 into r128;
+    lte r115 0i8 into r129;
+    is.eq r124 0u8 into r130;
+    or r129 r130 into r131;
+    ternary r131 2u8 0u8 into r132;
+    ternary r128 1u8 r132 into r133;
+    add r1.turn 1u8 into r134;
+    or r106 r107 into r135;
+    mul r1.war 2u8 into r136;
+    ternary r135 1u8 r136 into r137;
+    cast r1.player1 r1.player2 r1.cards_p1 r1.cards_p2 r115 r123 r134 r137 r124 r125 false false true false true false r133 into r138 as Game;
+    set r138 into games[r0];
+
+function claim_prize:
+    input r0 as u32.private;
+    call token_registry.aleo/transfer_public_as_signer 3443843282313283355522573239085696902919850365217539366784739393210722344986field self.caller 20000000u128 into r1;
+    async claim_prize r0 self.caller r1 into r2;
+    output r2 as war_000000000000000000000000000.aleo/claim_prize.future;
+
+finalize claim_prize:
+    input r0 as u32.public;
+    input r1 as address.public;
+    input r2 as token_registry.aleo/transfer_public_as_signer.future;
+    get games[r0] into r3;
+    is.eq r3.winner 1u8 into r4;
+    is.eq r1 r3.player1 into r5;
+    and r4 r5 into r6;
+    is.eq r3.winner 2u8 into r7;
+    is.eq r1 r3.player2 into r8;
+    and r7 r8 into r9;
+    or r6 r9 into r10;
+    assert.eq r10 true;
+    is.neq r3.winner 3u8 into r11;
+    assert.eq r11 true;
+    await r2;
+    cast r3.player1 r3.player2 r3.cards_p1 r3.cards_p2 r3.chips_p1 r3.chips_p2 r3.turn r3.war r3.remaining_cards_p1 r3.remaining_cards_p2 r3.first_move_done r3.p1_must_reveal_p1 r3.p1_must_reveal_p2 r3.p2_must_reveal_p2 r3.p2_must_reveal_p1 r3.must_compare 3u8 into r12 as Game;
+    set r12 into games[r0];

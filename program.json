@@ -1,21 +1,24 @@
 {
-  "program": "war.aleo",
+  "program": "war_000000000000000000000000000.aleo",
   "version": "0.1.0",
   "description": "",
   "license": "MIT",
-  "dev_dependencies": null,
   "dependencies": [
     {
       "name": "zk_deck_shuffle.aleo",
       "location": "local",
-      "network": null,
       "path": "imports/zk_deck_shuffle/"
     },
     {
       "name": "zk_sra_encryption.aleo",
       "location": "local",
-      "network": null,
       "path": "imports/zk_sra_encryption/"
+    },
+    {
+      "name": "token_registry.aleo",
+      "location": "network",
+      "path": null
     }
-  ]
+  ],
+  "dev_dependencies": null
 }
