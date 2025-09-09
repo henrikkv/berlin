@@ -1,4 +1,6 @@
 program zk_deck_shuffle.aleo {
+    @noupgrade
+    async constructor () {}
 
     inline get_new_deck() -> [[u128; 14]; 2] {
         return [[1u128, 2u128, 3u128, 4u128, 5u128, 6u128, 7u128, 8u128, 9u128, 10u128, 11u128, 12u128, 13u128, 14u128],

@@ -544,3 +544,6 @@ function full_shuffle:
     call setup_shuffle r2 r26 into r27 r28 r29;
     call shuffle_deck r27 0u8 r28 r29 into r30;
     output r30 as [[u128; 14u32]; 2u32].private;
+
+constructor:
+    assert.eq edition 0u16;
