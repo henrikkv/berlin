@@ -1,0 +1,23 @@
+[package]
+name = "war"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "war_bindings"
+path = "lib.rs"
+
+[dependencies]
+leo-bindings = { git = "https://github.com/henrikkv/leo-bindings" }
+leo-bindings-credits = { git = "https://github.com/henrikkv/leo-bindings" }
+anyhow = "1.0"
+snarkvm = "4.1.0"
+leo-lang = "3.1.0"
+leo-package = "3.1.0"
+leo-ast = "3.1.0"
+leo-span = "3.1.0"
+aleo-std = { version = "1.0.1", features = ["storage"] }
+indexmap = "2.0"
+serde_json = "1.0"
+ureq = { version = "2.6", features = ["json"] }
+rand = "0.8"

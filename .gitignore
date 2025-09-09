@@ -2,4 +2,7 @@
 *.avm
 *.prover
 *.verifier
-outputs/
+outputs/*
+!outputs/
+!outputs/war_game.initial.json
+/target
