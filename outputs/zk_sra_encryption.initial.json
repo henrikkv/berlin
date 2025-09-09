@@ -1,0 +1,2529 @@
+{
+  "imports": {},
+  "stubs": {},
+  "program_scopes": {
+    "zk_sra_encryption": {
+      "program_id": {
+        "name": {
+          "name": "zk_sra_encryption",
+          "id": 0
+        },
+        "network": {
+          "name": "aleo",
+          "id": 1
+        }
+      },
+      "consts": [],
+      "structs": [],
+      "mappings": [],
+      "functions": [
+        [
+          "encrypt_deck",
+          {
+            "annotations": [],
+            "variant": "Transition",
+            "identifier": {
+              "name": "encrypt_deck",
+              "id": 58
+            },
+            "const_parameters": [],
+            "input": [
+              {
+                "identifier": {
+                  "name": "e",
+                  "id": 59
+                },
+                "mode": "None",
+                "type_": {
+                  "Integer": "U128"
+                },
+                "id": 60
+              },
+              {
+                "identifier": {
+                  "name": "n",
+                  "id": 61
+                },
+                "mode": "None",
+                "type_": {
+                  "Integer": "U128"
+                },
+                "id": 62
+              },
+              {
+                "identifier": {
+                  "name": "deck",
+                  "id": 63
+                },
+                "mode": "None",
+                "type_": {
+                  "Array": {
+                    "element_type": {
+                      "Array": {
+                        "element_type": {
+                          "Integer": "U128"
+                        },
+                        "length": {
+                          "Literal": {
+                            "id": 64,
+                            "variant": {
+                              "Unsuffixed": "14"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "length": {
+                      "Literal": {
+                        "id": 65,
+                        "variant": {
+                          "Unsuffixed": "2"
+                        }
+                      }
+                    }
+                  }
+                },
+                "id": 66
+              }
+            ],
+            "output": [
+              {
+                "mode": "None",
+                "type_": {
+                  "Array": {
+                    "element_type": {
+                      "Array": {
+                        "element_type": {
+                          "Integer": "U128"
+                        },
+                        "length": {
+                          "Literal": {
+                            "id": 67,
+                            "variant": {
+                              "Unsuffixed": "14"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "length": {
+                      "Literal": {
+                        "id": 68,
+                        "variant": {
+                          "Unsuffixed": "2"
+                        }
+                      }
+                    }
+                  }
+                },
+                "id": 69
+              }
+            ],
+            "output_type": {
+              "Array": {
+                "element_type": {
+                  "Array": {
+                    "element_type": {
+                      "Integer": "U128"
+                    },
+                    "length": {
+                      "Literal": {
+                        "id": 67,
+                        "variant": {
+                          "Unsuffixed": "14"
+                        }
+                      }
+                    }
+                  }
+                },
+                "length": {
+                  "Literal": {
+                    "id": 68,
+                    "variant": {
+                      "Unsuffixed": "2"
+                    }
+                  }
+                }
+              }
+            },
+            "block": {
+              "statements": [
+                {
+                  "Definition": {
+                    "place": {
+                      "Single": {
+                        "name": "bottom_half",
+                        "id": 70
+                      }
+                    },
+                    "type_": {
+                      "Array": {
+                        "element_type": {
+                          "Integer": "U128"
+                        },
+                        "length": {
+                          "Literal": {
+                            "id": 71,
+                            "variant": {
+                              "Unsuffixed": "14"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "value": {
+                      "ArrayAccess": {
+                        "array": {
+                          "Identifier": {
+                            "name": "deck",
+                            "id": 72
+                          }
+                        },
+                        "index": {
+                          "Literal": {
+                            "id": 73,
+                            "variant": {
+                              "Integer": [
+                                "U8",
+                                "0"
+                              ]
+                            }
+                          }
+                        },
+                        "id": 74
+                      }
+                    },
+                    "id": 75
+                  }
+                },
+                {
+                  "Definition": {
+                    "place": {
+                      "Single": {
+                        "name": "top_half",
+                        "id": 76
+                      }
+                    },
+                    "type_": {
+                      "Array": {
+                        "element_type": {
+                          "Integer": "U128"
+                        },
+                        "length": {
+                          "Literal": {
+                            "id": 77,
+                            "variant": {
+                              "Unsuffixed": "14"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "value": {
+                      "ArrayAccess": {
+                        "array": {
+                          "Identifier": {
+                            "name": "deck",
+                            "id": 78
+                          }
+                        },
+                        "index": {
+                          "Literal": {
+                            "id": 79,
+                            "variant": {
+                              "Integer": [
+                                "U8",
+                                "1"
+                              ]
+                            }
+                          }
+                        },
+                        "id": 80
+                      }
+                    },
+                    "id": 81
+                  }
+                },
+                {
+                  "Definition": {
+                    "place": {
+                      "Single": {
+                        "name": "encrypted_deck",
+                        "id": 82
+                      }
+                    },
+                    "type_": {
+                      "Array": {
+                        "element_type": {
+                          "Array": {
+                            "element_type": {
+                              "Integer": "U128"
+                            },
+                            "length": {
+                              "Literal": {
+                                "id": 83,
+                                "variant": {
+                                  "Unsuffixed": "14"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "length": {
+                          "Literal": {
+                            "id": 84,
+                            "variant": {
+                              "Unsuffixed": "2"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "value": {
+                      "Array": {
+                        "elements": [
+                          {
+                            "Array": {
+                              "elements": [
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 85
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "bottom_half",
+                                              "id": 86
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 87,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "0"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 88
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 89
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 90
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 91
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 92
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "bottom_half",
+                                              "id": 93
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 94,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "1"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 95
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 96
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 97
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 98
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 99
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "bottom_half",
+                                              "id": 100
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 101,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "2"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 102
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 103
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 104
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 105
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 106
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "bottom_half",
+                                              "id": 107
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 108,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "3"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 109
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 110
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 111
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 112
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 113
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "bottom_half",
+                                              "id": 114
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 115,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "4"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 116
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 117
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 118
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 119
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 120
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "bottom_half",
+                                              "id": 121
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 122,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "5"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 123
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 124
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 125
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 126
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 127
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "bottom_half",
+                                              "id": 128
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 129,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "6"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 130
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 131
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 132
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 133
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 134
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "bottom_half",
+                                              "id": 135
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 136,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "7"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 137
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 138
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 139
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 140
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 141
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "bottom_half",
+                                              "id": 142
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 143,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "8"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 144
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 145
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 146
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 147
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 148
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "bottom_half",
+                                              "id": 149
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 150,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "9"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 151
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 152
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 153
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 154
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 155
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "bottom_half",
+                                              "id": 156
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 157,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "10"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 158
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 159
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 160
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 161
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 162
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "bottom_half",
+                                              "id": 163
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 164,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "11"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 165
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 166
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 167
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 168
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 169
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "bottom_half",
+                                              "id": 170
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 171,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "12"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 172
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 173
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 174
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 175
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 176
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "bottom_half",
+                                              "id": 177
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 178,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "13"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 179
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 180
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 181
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 182
+                                  }
+                                }
+                              ],
+                              "id": 183
+                            }
+                          },
+                          {
+                            "Array": {
+                              "elements": [
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 184
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "top_half",
+                                              "id": 185
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 186,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "0"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 187
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 188
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 189
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 190
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 191
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "top_half",
+                                              "id": 192
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 193,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "1"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 194
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 195
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 196
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 197
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 198
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "top_half",
+                                              "id": 199
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 200,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "2"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 201
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 202
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 203
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 204
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 205
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "top_half",
+                                              "id": 206
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 207,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "3"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 208
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 209
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 210
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 211
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 212
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "top_half",
+                                              "id": 213
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 214,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "4"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 215
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 216
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 217
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 218
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 219
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "top_half",
+                                              "id": 220
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 221,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "5"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 222
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 223
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 224
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 225
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 226
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "top_half",
+                                              "id": 227
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 228,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "6"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 229
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 230
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 231
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 232
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 233
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "top_half",
+                                              "id": 234
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 235,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "7"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 236
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 237
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 238
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 239
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 240
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "top_half",
+                                              "id": 241
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 242,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "8"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 243
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 244
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 245
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 246
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 247
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "top_half",
+                                              "id": 248
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 249,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "9"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 250
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 251
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 252
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 253
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 254
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "top_half",
+                                              "id": 255
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 256,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "10"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 257
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 258
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 259
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 260
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 261
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "top_half",
+                                              "id": 262
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 263,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "11"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 264
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 265
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 266
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 267
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 268
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "top_half",
+                                              "id": 269
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 270,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "12"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 271
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 272
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 273
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 274
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "name": "exp_by_squaring",
+                                      "id": 275
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Identifier": {
+                                              "name": "top_half",
+                                              "id": 276
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 277,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "13"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 278
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "e",
+                                          "id": 279
+                                        }
+                                      },
+                                      {
+                                        "Identifier": {
+                                          "name": "n",
+                                          "id": 280
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 281
+                                  }
+                                }
+                              ],
+                              "id": 282
+                            }
+                          }
+                        ],
+                        "id": 283
+                      }
+                    },
+                    "id": 284
+                  }
+                },
+                {
+                  "Return": {
+                    "expression": {
+                      "Identifier": {
+                        "name": "encrypted_deck",
+                        "id": 285
+                      }
+                    },
+                    "id": 286
+                  }
+                }
+              ],
+              "id": 287
+            },
+            "id": 288
+          }
+        ],
+        [
+          "decrypt_card",
+          {
+            "annotations": [],
+            "variant": "Transition",
+            "identifier": {
+              "name": "decrypt_card",
+              "id": 289
+            },
+            "const_parameters": [],
+            "input": [
+              {
+                "identifier": {
+                  "name": "d",
+                  "id": 290
+                },
+                "mode": "None",
+                "type_": {
+                  "Integer": "U128"
+                },
+                "id": 291
+              },
+              {
+                "identifier": {
+                  "name": "n",
+                  "id": 292
+                },
+                "mode": "None",
+                "type_": {
+                  "Integer": "U128"
+                },
+                "id": 293
+              },
+              {
+                "identifier": {
+                  "name": "card",
+                  "id": 294
+                },
+                "mode": "None",
+                "type_": {
+                  "Integer": "U128"
+                },
+                "id": 295
+              }
+            ],
+            "output": [
+              {
+                "mode": "None",
+                "type_": {
+                  "Integer": "U128"
+                },
+                "id": 296
+              }
+            ],
+            "output_type": {
+              "Integer": "U128"
+            },
+            "block": {
+              "statements": [
+                {
+                  "Return": {
+                    "expression": {
+                      "Call": {
+                        "function": {
+                          "name": "exp_by_squaring",
+                          "id": 297
+                        },
+                        "const_arguments": [],
+                        "arguments": [
+                          {
+                            "Identifier": {
+                              "name": "card",
+                              "id": 298
+                            }
+                          },
+                          {
+                            "Identifier": {
+                              "name": "d",
+                              "id": 299
+                            }
+                          },
+                          {
+                            "Identifier": {
+                              "name": "n",
+                              "id": 300
+                            }
+                          }
+                        ],
+                        "program": "zk_sra_encryption",
+                        "id": 301
+                      }
+                    },
+                    "id": 302
+                  }
+                }
+              ],
+              "id": 303
+            },
+            "id": 304
+          }
+        ],
+        [
+          "test_encrypt_exp_by_squaring",
+          {
+            "annotations": [],
+            "variant": "Transition",
+            "identifier": {
+              "name": "test_encrypt_exp_by_squaring",
+              "id": 305
+            },
+            "const_parameters": [],
+            "input": [
+              {
+                "identifier": {
+                  "name": "m",
+                  "id": 306
+                },
+                "mode": "Public",
+                "type_": {
+                  "Integer": "U128"
+                },
+                "id": 307
+              },
+              {
+                "identifier": {
+                  "name": "e",
+                  "id": 308
+                },
+                "mode": "None",
+                "type_": {
+                  "Integer": "U128"
+                },
+                "id": 309
+              },
+              {
+                "identifier": {
+                  "name": "d",
+                  "id": 310
+                },
+                "mode": "None",
+                "type_": {
+                  "Integer": "U128"
+                },
+                "id": 311
+              },
+              {
+                "identifier": {
+                  "name": "n",
+                  "id": 312
+                },
+                "mode": "None",
+                "type_": {
+                  "Integer": "U128"
+                },
+                "id": 313
+              }
+            ],
+            "output": [
+              {
+                "mode": "None",
+                "type_": {
+                  "Integer": "U128"
+                },
+                "id": 314
+              },
+              {
+                "mode": "None",
+                "type_": {
+                  "Integer": "U128"
+                },
+                "id": 315
+              }
+            ],
+            "output_type": {
+              "Tuple": {
+                "elements": [
+                  {
+                    "Integer": "U128"
+                  },
+                  {
+                    "Integer": "U128"
+                  }
+                ]
+              }
+            },
+            "block": {
+              "statements": [
+                {
+                  "Definition": {
+                    "place": {
+                      "Single": {
+                        "name": "c",
+                        "id": 316
+                      }
+                    },
+                    "type_": {
+                      "Integer": "U128"
+                    },
+                    "value": {
+                      "Call": {
+                        "function": {
+                          "name": "exp_by_squaring",
+                          "id": 317
+                        },
+                        "const_arguments": [],
+                        "arguments": [
+                          {
+                            "Identifier": {
+                              "name": "m",
+                              "id": 318
+                            }
+                          },
+                          {
+                            "Identifier": {
+                              "name": "e",
+                              "id": 319
+                            }
+                          },
+                          {
+                            "Identifier": {
+                              "name": "n",
+                              "id": 320
+                            }
+                          }
+                        ],
+                        "program": "zk_sra_encryption",
+                        "id": 321
+                      }
+                    },
+                    "id": 322
+                  }
+                },
+                {
+                  "Definition": {
+                    "place": {
+                      "Single": {
+                        "name": "p",
+                        "id": 323
+                      }
+                    },
+                    "type_": {
+                      "Integer": "U128"
+                    },
+                    "value": {
+                      "Call": {
+                        "function": {
+                          "name": "exp_by_squaring",
+                          "id": 324
+                        },
+                        "const_arguments": [],
+                        "arguments": [
+                          {
+                            "Identifier": {
+                              "name": "c",
+                              "id": 325
+                            }
+                          },
+                          {
+                            "Identifier": {
+                              "name": "d",
+                              "id": 326
+                            }
+                          },
+                          {
+                            "Identifier": {
+                              "name": "n",
+                              "id": 327
+                            }
+                          }
+                        ],
+                        "program": "zk_sra_encryption",
+                        "id": 328
+                      }
+                    },
+                    "id": 329
+                  }
+                },
+                {
+                  "Assert": {
+                    "variant": {
+                      "AssertEq": [
+                        {
+                          "Identifier": {
+                            "name": "m",
+                            "id": 330
+                          }
+                        },
+                        {
+                          "Identifier": {
+                            "name": "p",
+                            "id": 331
+                          }
+                        }
+                      ]
+                    },
+                    "id": 332
+                  }
+                },
+                {
+                  "Return": {
+                    "expression": {
+                      "Tuple": {
+                        "elements": [
+                          {
+                            "Identifier": {
+                              "name": "c",
+                              "id": 333
+                            }
+                          },
+                          {
+                            "Identifier": {
+                              "name": "p",
+                              "id": 334
+                            }
+                          }
+                        ],
+                        "id": 335
+                      }
+                    },
+                    "id": 336
+                  }
+                }
+              ],
+              "id": 337
+            },
+            "id": 338
+          }
+        ],
+        [
+          "test_exp_by_squaring",
+          {
+            "annotations": [],
+            "variant": "Transition",
+            "identifier": {
+              "name": "test_exp_by_squaring",
+              "id": 339
+            },
+            "const_parameters": [],
+            "input": [
+              {
+                "identifier": {
+                  "name": "m",
+                  "id": 340
+                },
+                "mode": "Public",
+                "type_": {
+                  "Integer": "U128"
+                },
+                "id": 341
+              },
+              {
+                "identifier": {
+                  "name": "d1",
+                  "id": 342
+                },
+                "mode": "None",
+                "type_": {
+                  "Integer": "U128"
+                },
+                "id": 343
+              },
+              {
+                "identifier": {
+                  "name": "d2",
+                  "id": 344
+                },
+                "mode": "None",
+                "type_": {
+                  "Integer": "U128"
+                },
+                "id": 345
+              },
+              {
+                "identifier": {
+                  "name": "n",
+                  "id": 346
+                },
+                "mode": "None",
+                "type_": {
+                  "Integer": "U128"
+                },
+                "id": 347
+              }
+            ],
+            "output": [
+              {
+                "mode": "None",
+                "type_": {
+                  "Integer": "U128"
+                },
+                "id": 348
+              },
+              {
+                "mode": "None",
+                "type_": {
+                  "Integer": "U128"
+                },
+                "id": 349
+              }
+            ],
+            "output_type": {
+              "Tuple": {
+                "elements": [
+                  {
+                    "Integer": "U128"
+                  },
+                  {
+                    "Integer": "U128"
+                  }
+                ]
+              }
+            },
+            "block": {
+              "statements": [
+                {
+                  "Definition": {
+                    "place": {
+                      "Single": {
+                        "name": "m1",
+                        "id": 350
+                      }
+                    },
+                    "type_": {
+                      "Integer": "U128"
+                    },
+                    "value": {
+                      "Call": {
+                        "function": {
+                          "name": "exp_by_squaring",
+                          "id": 351
+                        },
+                        "const_arguments": [],
+                        "arguments": [
+                          {
+                            "Identifier": {
+                              "name": "m",
+                              "id": 352
+                            }
+                          },
+                          {
+                            "Identifier": {
+                              "name": "d1",
+                              "id": 353
+                            }
+                          },
+                          {
+                            "Identifier": {
+                              "name": "n",
+                              "id": 354
+                            }
+                          }
+                        ],
+                        "program": "zk_sra_encryption",
+                        "id": 355
+                      }
+                    },
+                    "id": 356
+                  }
+                },
+                {
+                  "Definition": {
+                    "place": {
+                      "Single": {
+                        "name": "p",
+                        "id": 357
+                      }
+                    },
+                    "type_": {
+                      "Integer": "U128"
+                    },
+                    "value": {
+                      "Call": {
+                        "function": {
+                          "name": "exp_by_squaring",
+                          "id": 358
+                        },
+                        "const_arguments": [],
+                        "arguments": [
+                          {
+                            "Identifier": {
+                              "name": "m1",
+                              "id": 359
+                            }
+                          },
+                          {
+                            "Identifier": {
+                              "name": "d2",
+                              "id": 360
+                            }
+                          },
+                          {
+                            "Identifier": {
+                              "name": "n",
+                              "id": 361
+                            }
+                          }
+                        ],
+                        "program": "zk_sra_encryption",
+                        "id": 362
+                      }
+                    },
+                    "id": 363
+                  }
+                },
+                {
+                  "Return": {
+                    "expression": {
+                      "Tuple": {
+                        "elements": [
+                          {
+                            "Identifier": {
+                              "name": "m1",
+                              "id": 364
+                            }
+                          },
+                          {
+                            "Identifier": {
+                              "name": "p",
+                              "id": 365
+                            }
+                          }
+                        ],
+                        "id": 366
+                      }
+                    },
+                    "id": 367
+                  }
+                }
+              ],
+              "id": 368
+            },
+            "id": 369
+          }
+        ],
+        [
+          "exp_by_squaring",
+          {
+            "annotations": [],
+            "variant": "Function",
+            "identifier": {
+              "name": "exp_by_squaring",
+              "id": 6
+            },
+            "const_parameters": [],
+            "input": [
+              {
+                "identifier": {
+                  "name": "base",
+                  "id": 7
+                },
+                "mode": "None",
+                "type_": {
+                  "Integer": "U128"
+                },
+                "id": 8
+              },
+              {
+                "identifier": {
+                  "name": "exp",
+                  "id": 9
+                },
+                "mode": "None",
+                "type_": {
+                  "Integer": "U128"
+                },
+                "id": 10
+              },
+              {
+                "identifier": {
+                  "name": "modulus",
+                  "id": 11
+                },
+                "mode": "None",
+                "type_": {
+                  "Integer": "U128"
+                },
+                "id": 12
+              }
+            ],
+            "output": [
+              {
+                "mode": "None",
+                "type_": {
+                  "Integer": "U128"
+                },
+                "id": 13
+              }
+            ],
+            "output_type": {
+              "Integer": "U128"
+            },
+            "block": {
+              "statements": [
+                {
+                  "Definition": {
+                    "place": {
+                      "Single": {
+                        "name": "result",
+                        "id": 14
+                      }
+                    },
+                    "type_": {
+                      "Integer": "U128"
+                    },
+                    "value": {
+                      "Literal": {
+                        "id": 15,
+                        "variant": {
+                          "Integer": [
+                            "U128",
+                            "1"
+                          ]
+                        }
+                      }
+                    },
+                    "id": 16
+                  }
+                },
+                {
+                  "Definition": {
+                    "place": {
+                      "Single": {
+                        "name": "current_base",
+                        "id": 17
+                      }
+                    },
+                    "type_": {
+                      "Integer": "U128"
+                    },
+                    "value": {
+                      "Identifier": {
+                        "name": "base",
+                        "id": 18
+                      }
+                    },
+                    "id": 19
+                  }
+                },
+                {
+                  "Iteration": {
+                    "variable": {
+                      "name": "i",
+                      "id": 20
+                    },
+                    "type_": {
+                      "Integer": "U8"
+                    },
+                    "start": {
+                      "Literal": {
+                        "id": 21,
+                        "variant": {
+                          "Integer": [
+                            "U8",
+                            "0"
+                          ]
+                        }
+                      }
+                    },
+                    "stop": {
+                      "Literal": {
+                        "id": 22,
+                        "variant": {
+                          "Integer": [
+                            "U8",
+                            "8"
+                          ]
+                        }
+                      }
+                    },
+                    "inclusive": false,
+                    "block": {
+                      "statements": [
+                        {
+                          "Conditional": {
+                            "condition": {
+                              "Binary": {
+                                "left": {
+                                  "Binary": {
+                                    "left": {
+                                      "Identifier": {
+                                        "name": "exp",
+                                        "id": 23
+                                      }
+                                    },
+                                    "right": {
+                                      "Literal": {
+                                        "id": 24,
+                                        "variant": {
+                                          "Integer": [
+                                            "U128",
+                                            "2"
+                                          ]
+                                        }
+                                      }
+                                    },
+                                    "op": "Rem",
+                                    "id": 25
+                                  }
+                                },
+                                "right": {
+                                  "Literal": {
+                                    "id": 26,
+                                    "variant": {
+                                      "Integer": [
+                                        "U128",
+                                        "1"
+                                      ]
+                                    }
+                                  }
+                                },
+                                "op": "Eq",
+                                "id": 27
+                              }
+                            },
+                            "then": {
+                              "statements": [
+                                {
+                                  "Assign": {
+                                    "place": {
+                                      "Identifier": {
+                                        "name": "result",
+                                        "id": 28
+                                      }
+                                    },
+                                    "value": {
+                                      "Binary": {
+                                        "left": {
+                                          "Binary": {
+                                            "left": {
+                                              "Identifier": {
+                                                "name": "result",
+                                                "id": 29
+                                              }
+                                            },
+                                            "right": {
+                                              "Identifier": {
+                                                "name": "current_base",
+                                                "id": 30
+                                              }
+                                            },
+                                            "op": "Mul",
+                                            "id": 31
+                                          }
+                                        },
+                                        "right": {
+                                          "Identifier": {
+                                            "name": "modulus",
+                                            "id": 32
+                                          }
+                                        },
+                                        "op": "Rem",
+                                        "id": 33
+                                      }
+                                    },
+                                    "id": 35
+                                  }
+                                }
+                              ],
+                              "id": 36
+                            },
+                            "otherwise": null,
+                            "id": 37
+                          }
+                        },
+                        {
+                          "Assign": {
+                            "place": {
+                              "Identifier": {
+                                "name": "current_base",
+                                "id": 38
+                              }
+                            },
+                            "value": {
+                              "Binary": {
+                                "left": {
+                                  "Binary": {
+                                    "left": {
+                                      "Identifier": {
+                                        "name": "current_base",
+                                        "id": 39
+                                      }
+                                    },
+                                    "right": {
+                                      "Identifier": {
+                                        "name": "current_base",
+                                        "id": 40
+                                      }
+                                    },
+                                    "op": "Mul",
+                                    "id": 41
+                                  }
+                                },
+                                "right": {
+                                  "Identifier": {
+                                    "name": "modulus",
+                                    "id": 42
+                                  }
+                                },
+                                "op": "Rem",
+                                "id": 43
+                              }
+                            },
+                            "id": 45
+                          }
+                        },
+                        {
+                          "Assign": {
+                            "place": {
+                              "Identifier": {
+                                "name": "exp",
+                                "id": 46
+                              }
+                            },
+                            "value": {
+                              "Binary": {
+                                "left": {
+                                  "Identifier": {
+                                    "name": "exp",
+                                    "id": 48
+                                  }
+                                },
+                                "right": {
+                                  "Literal": {
+                                    "id": 47,
+                                    "variant": {
+                                      "Integer": [
+                                        "U8",
+                                        "1"
+                                      ]
+                                    }
+                                  }
+                                },
+                                "op": "Shr",
+                                "id": 49
+                              }
+                            },
+                            "id": 50
+                          }
+                        }
+                      ],
+                      "id": 51
+                    },
+                    "id": 52
+                  }
+                },
+                {
+                  "Return": {
+                    "expression": {
+                      "Cast": {
+                        "expression": {
+                          "Identifier": {
+                            "name": "result",
+                            "id": 53
+                          }
+                        },
+                        "type_": {
+                          "Integer": "U128"
+                        },
+                        "id": 54
+                      }
+                    },
+                    "id": 55
+                  }
+                }
+              ],
+              "id": 56
+            },
+            "id": 57
+          }
+        ]
+      ],
+      "constructor": {
+        "annotations": [
+          {
+            "identifier": {
+              "name": "noupgrade",
+              "id": 2
+            },
+            "map": {},
+            "id": 3
+          }
+        ],
+        "block": {
+          "statements": [],
+          "id": 4
+        },
+        "id": 5
+      }
+    }
+  }
+}

@@ -4,5 +4,5 @@
 *.verifier
 outputs/*
 !outputs/
-!outputs/war_game.initial.json
+!outputs/*.initial.json
 /target
