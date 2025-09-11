@@ -40,6 +40,10 @@ mapping withdraw:
     key as address.public;
     value as address.public;
 
+mapping pool:
+    key as address.public;
+    value as u64.public;
+
 record credits:
     owner as address.private;
     microcredits as u64.private;
@@ -375,3 +379,20 @@ finalize fee_public:
     get account[r0] into r2;
     sub r2 r1 into r3;
     set r3 into account[r0];
+
+function upgrade:
+    input r0 as credits.record;
+    lte r0.microcredits 1000000000000u64 into r1;
+    assert.eq r1 true;
+    cast r0.owner r0.microcredits into r2 as credits.record;
+    async upgrade r0.microcredits into r3;
+    output r2 as credits.record;
+    output r3 as credits.aleo/upgrade.future;
+
+finalize upgrade:
+    input r0 as u64.public;
+    get.or_use pool[aleo1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq3ljyzc] 0u64 into r1;
+    add r1 r0 into r2;
+    lte r2 4000000000000u64 into r3;
+    assert.eq r3 true;
+    set r2 into pool[aleo1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq3ljyzc];

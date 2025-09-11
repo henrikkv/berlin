@@ -1,4 +1,5 @@
 {
+  "modules": {},
   "imports": {},
   "stubs": {},
   "program_scopes": {
@@ -24,36 +25,36 @@
             "variant": "Transition",
             "identifier": {
               "name": "encrypt_deck",
-              "id": 58
+              "id": 70
             },
             "const_parameters": [],
             "input": [
               {
                 "identifier": {
                   "name": "e",
-                  "id": 59
+                  "id": 71
                 },
                 "mode": "None",
                 "type_": {
                   "Integer": "U128"
                 },
-                "id": 60
+                "id": 72
               },
               {
                 "identifier": {
                   "name": "n",
-                  "id": 61
+                  "id": 73
                 },
                 "mode": "None",
                 "type_": {
                   "Integer": "U128"
                 },
-                "id": 62
+                "id": 74
               },
               {
                 "identifier": {
                   "name": "deck",
-                  "id": 63
+                  "id": 75
                 },
                 "mode": "None",
                 "type_": {
@@ -65,7 +66,7 @@
                         },
                         "length": {
                           "Literal": {
-                            "id": 64,
+                            "id": 76,
                             "variant": {
                               "Unsuffixed": "14"
                             }
@@ -75,7 +76,7 @@
                     },
                     "length": {
                       "Literal": {
-                        "id": 65,
+                        "id": 77,
                         "variant": {
                           "Unsuffixed": "2"
                         }
@@ -83,7 +84,7 @@
                     }
                   }
                 },
-                "id": 66
+                "id": 78
               }
             ],
             "output": [
@@ -98,7 +99,7 @@
                         },
                         "length": {
                           "Literal": {
-                            "id": 67,
+                            "id": 79,
                             "variant": {
                               "Unsuffixed": "14"
                             }
@@ -108,7 +109,7 @@
                     },
                     "length": {
                       "Literal": {
-                        "id": 68,
+                        "id": 80,
                         "variant": {
                           "Unsuffixed": "2"
                         }
@@ -116,7 +117,7 @@
                     }
                   }
                 },
-                "id": 69
+                "id": 81
               }
             ],
             "output_type": {
@@ -128,7 +129,7 @@
                     },
                     "length": {
                       "Literal": {
-                        "id": 67,
+                        "id": 79,
                         "variant": {
                           "Unsuffixed": "14"
                         }
@@ -138,7 +139,7 @@
                 },
                 "length": {
                   "Literal": {
-                    "id": 68,
+                    "id": 80,
                     "variant": {
                       "Unsuffixed": "2"
                     }
@@ -153,7 +154,7 @@
                     "place": {
                       "Single": {
                         "name": "bottom_half",
-                        "id": 70
+                        "id": 82
                       }
                     },
                     "type_": {
@@ -163,7 +164,7 @@
                         },
                         "length": {
                           "Literal": {
-                            "id": 71,
+                            "id": 83,
                             "variant": {
                               "Unsuffixed": "14"
                             }
@@ -174,14 +175,19 @@
                     "value": {
                       "ArrayAccess": {
                         "array": {
-                          "Identifier": {
-                            "name": "deck",
-                            "id": 72
+                          "Path": {
+                            "qualifier": [],
+                            "identifier": {
+                              "name": "deck",
+                              "id": 84
+                            },
+                            "absolute_path": null,
+                            "id": 85
                           }
                         },
                         "index": {
                           "Literal": {
-                            "id": 73,
+                            "id": 86,
                             "variant": {
                               "Integer": [
                                 "U8",
@@ -190,10 +196,10 @@
                             }
                           }
                         },
-                        "id": 74
+                        "id": 87
                       }
                     },
-                    "id": 75
+                    "id": 88
                   }
                 },
                 {
@@ -201,7 +207,7 @@
                     "place": {
                       "Single": {
                         "name": "top_half",
-                        "id": 76
+                        "id": 89
                       }
                     },
                     "type_": {
@@ -211,7 +217,7 @@
                         },
                         "length": {
                           "Literal": {
-                            "id": 77,
+                            "id": 90,
                             "variant": {
                               "Unsuffixed": "14"
                             }
@@ -222,14 +228,19 @@
                     "value": {
                       "ArrayAccess": {
                         "array": {
-                          "Identifier": {
-                            "name": "deck",
-                            "id": 78
+                          "Path": {
+                            "qualifier": [],
+                            "identifier": {
+                              "name": "deck",
+                              "id": 91
+                            },
+                            "absolute_path": null,
+                            "id": 92
                           }
                         },
                         "index": {
                           "Literal": {
-                            "id": 79,
+                            "id": 93,
                             "variant": {
                               "Integer": [
                                 "U8",
@@ -238,10 +249,10 @@
                             }
                           }
                         },
-                        "id": 80
+                        "id": 94
                       }
                     },
-                    "id": 81
+                    "id": 95
                   }
                 },
                 {
@@ -249,7 +260,7 @@
                     "place": {
                       "Single": {
                         "name": "encrypted_deck",
-                        "id": 82
+                        "id": 96
                       }
                     },
                     "type_": {
@@ -261,7 +272,7 @@
                             },
                             "length": {
                               "Literal": {
-                                "id": 83,
+                                "id": 97,
                                 "variant": {
                                   "Unsuffixed": "14"
                                 }
@@ -271,7 +282,7 @@
                         },
                         "length": {
                           "Literal": {
-                            "id": 84,
+                            "id": 98,
                             "variant": {
                               "Unsuffixed": "2"
                             }
@@ -288,22 +299,32 @@
                                 {
                                   "Call": {
                                     "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 85
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 99
+                                      },
+                                      "absolute_path": null,
+                                      "id": 100
                                     },
                                     "const_arguments": [],
                                     "arguments": [
                                       {
                                         "ArrayAccess": {
                                           "array": {
-                                            "Identifier": {
-                                              "name": "bottom_half",
-                                              "id": 86
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "bottom_half",
+                                                "id": 101
+                                              },
+                                              "absolute_path": null,
+                                              "id": 102
                                             }
                                           },
                                           "index": {
                                             "Literal": {
-                                              "id": 87,
+                                              "id": 103,
                                               "variant": {
                                                 "Integer": [
                                                   "U8",
@@ -312,45 +333,65 @@
                                               }
                                             }
                                           },
-                                          "id": 88
+                                          "id": 104
                                         }
                                       },
                                       {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 89
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 105
+                                          },
+                                          "absolute_path": null,
+                                          "id": 106
                                         }
                                       },
                                       {
-                                        "Identifier": {
-                                          "name": "n",
-                                          "id": 90
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 107
+                                          },
+                                          "absolute_path": null,
+                                          "id": 108
                                         }
                                       }
                                     ],
                                     "program": "zk_sra_encryption",
-                                    "id": 91
+                                    "id": 109
                                   }
                                 },
                                 {
                                   "Call": {
                                     "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 92
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 110
+                                      },
+                                      "absolute_path": null,
+                                      "id": 111
                                     },
                                     "const_arguments": [],
                                     "arguments": [
                                       {
                                         "ArrayAccess": {
                                           "array": {
-                                            "Identifier": {
-                                              "name": "bottom_half",
-                                              "id": 93
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "bottom_half",
+                                                "id": 112
+                                              },
+                                              "absolute_path": null,
+                                              "id": 113
                                             }
                                           },
                                           "index": {
                                             "Literal": {
-                                              "id": 94,
+                                              "id": 114,
                                               "variant": {
                                                 "Integer": [
                                                   "U8",
@@ -359,45 +400,65 @@
                                               }
                                             }
                                           },
-                                          "id": 95
+                                          "id": 115
                                         }
                                       },
                                       {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 96
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 116
+                                          },
+                                          "absolute_path": null,
+                                          "id": 117
                                         }
                                       },
                                       {
-                                        "Identifier": {
-                                          "name": "n",
-                                          "id": 97
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 118
+                                          },
+                                          "absolute_path": null,
+                                          "id": 119
                                         }
                                       }
                                     ],
                                     "program": "zk_sra_encryption",
-                                    "id": 98
+                                    "id": 120
                                   }
                                 },
                                 {
                                   "Call": {
                                     "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 99
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 121
+                                      },
+                                      "absolute_path": null,
+                                      "id": 122
                                     },
                                     "const_arguments": [],
                                     "arguments": [
                                       {
                                         "ArrayAccess": {
                                           "array": {
-                                            "Identifier": {
-                                              "name": "bottom_half",
-                                              "id": 100
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "bottom_half",
+                                                "id": 123
+                                              },
+                                              "absolute_path": null,
+                                              "id": 124
                                             }
                                           },
                                           "index": {
                                             "Literal": {
-                                              "id": 101,
+                                              "id": 125,
                                               "variant": {
                                                 "Integer": [
                                                   "U8",
@@ -406,227 +467,59 @@
                                               }
                                             }
                                           },
-                                          "id": 102
+                                          "id": 126
                                         }
                                       },
                                       {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 103
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 127
+                                          },
+                                          "absolute_path": null,
+                                          "id": 128
                                         }
                                       },
                                       {
-                                        "Identifier": {
-                                          "name": "n",
-                                          "id": 104
-                                        }
-                                      }
-                                    ],
-                                    "program": "zk_sra_encryption",
-                                    "id": 105
-                                  }
-                                },
-                                {
-                                  "Call": {
-                                    "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 106
-                                    },
-                                    "const_arguments": [],
-                                    "arguments": [
-                                      {
-                                        "ArrayAccess": {
-                                          "array": {
-                                            "Identifier": {
-                                              "name": "bottom_half",
-                                              "id": 107
-                                            }
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 129
                                           },
-                                          "index": {
-                                            "Literal": {
-                                              "id": 108,
-                                              "variant": {
-                                                "Integer": [
-                                                  "U8",
-                                                  "3"
-                                                ]
-                                              }
-                                            }
-                                          },
-                                          "id": 109
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 110
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "n",
-                                          "id": 111
-                                        }
-                                      }
-                                    ],
-                                    "program": "zk_sra_encryption",
-                                    "id": 112
-                                  }
-                                },
-                                {
-                                  "Call": {
-                                    "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 113
-                                    },
-                                    "const_arguments": [],
-                                    "arguments": [
-                                      {
-                                        "ArrayAccess": {
-                                          "array": {
-                                            "Identifier": {
-                                              "name": "bottom_half",
-                                              "id": 114
-                                            }
-                                          },
-                                          "index": {
-                                            "Literal": {
-                                              "id": 115,
-                                              "variant": {
-                                                "Integer": [
-                                                  "U8",
-                                                  "4"
-                                                ]
-                                              }
-                                            }
-                                          },
-                                          "id": 116
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 117
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "n",
-                                          "id": 118
-                                        }
-                                      }
-                                    ],
-                                    "program": "zk_sra_encryption",
-                                    "id": 119
-                                  }
-                                },
-                                {
-                                  "Call": {
-                                    "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 120
-                                    },
-                                    "const_arguments": [],
-                                    "arguments": [
-                                      {
-                                        "ArrayAccess": {
-                                          "array": {
-                                            "Identifier": {
-                                              "name": "bottom_half",
-                                              "id": 121
-                                            }
-                                          },
-                                          "index": {
-                                            "Literal": {
-                                              "id": 122,
-                                              "variant": {
-                                                "Integer": [
-                                                  "U8",
-                                                  "5"
-                                                ]
-                                              }
-                                            }
-                                          },
-                                          "id": 123
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 124
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "n",
-                                          "id": 125
-                                        }
-                                      }
-                                    ],
-                                    "program": "zk_sra_encryption",
-                                    "id": 126
-                                  }
-                                },
-                                {
-                                  "Call": {
-                                    "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 127
-                                    },
-                                    "const_arguments": [],
-                                    "arguments": [
-                                      {
-                                        "ArrayAccess": {
-                                          "array": {
-                                            "Identifier": {
-                                              "name": "bottom_half",
-                                              "id": 128
-                                            }
-                                          },
-                                          "index": {
-                                            "Literal": {
-                                              "id": 129,
-                                              "variant": {
-                                                "Integer": [
-                                                  "U8",
-                                                  "6"
-                                                ]
-                                              }
-                                            }
-                                          },
+                                          "absolute_path": null,
                                           "id": 130
                                         }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 131
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "n",
-                                          "id": 132
-                                        }
                                       }
                                     ],
                                     "program": "zk_sra_encryption",
-                                    "id": 133
+                                    "id": 131
                                   }
                                 },
                                 {
                                   "Call": {
                                     "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 134
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 132
+                                      },
+                                      "absolute_path": null,
+                                      "id": 133
                                     },
                                     "const_arguments": [],
                                     "arguments": [
                                       {
                                         "ArrayAccess": {
                                           "array": {
-                                            "Identifier": {
-                                              "name": "bottom_half",
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "bottom_half",
+                                                "id": 134
+                                              },
+                                              "absolute_path": null,
                                               "id": 135
                                             }
                                           },
@@ -636,7 +529,7 @@
                                               "variant": {
                                                 "Integer": [
                                                   "U8",
-                                                  "7"
+                                                  "3"
                                                 ]
                                               }
                                             }
@@ -645,120 +538,108 @@
                                         }
                                       },
                                       {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 138
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "n",
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 138
+                                          },
+                                          "absolute_path": null,
                                           "id": 139
                                         }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 140
+                                          },
+                                          "absolute_path": null,
+                                          "id": 141
+                                        }
                                       }
                                     ],
                                     "program": "zk_sra_encryption",
-                                    "id": 140
+                                    "id": 142
                                   }
                                 },
                                 {
                                   "Call": {
                                     "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 141
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 143
+                                      },
+                                      "absolute_path": null,
+                                      "id": 144
                                     },
                                     "const_arguments": [],
                                     "arguments": [
                                       {
                                         "ArrayAccess": {
                                           "array": {
-                                            "Identifier": {
-                                              "name": "bottom_half",
-                                              "id": 142
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "bottom_half",
+                                                "id": 145
+                                              },
+                                              "absolute_path": null,
+                                              "id": 146
                                             }
                                           },
                                           "index": {
                                             "Literal": {
-                                              "id": 143,
+                                              "id": 147,
                                               "variant": {
                                                 "Integer": [
                                                   "U8",
-                                                  "8"
+                                                  "4"
                                                 ]
                                               }
                                             }
                                           },
-                                          "id": 144
+                                          "id": 148
                                         }
                                       },
                                       {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 145
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "n",
-                                          "id": 146
-                                        }
-                                      }
-                                    ],
-                                    "program": "zk_sra_encryption",
-                                    "id": 147
-                                  }
-                                },
-                                {
-                                  "Call": {
-                                    "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 148
-                                    },
-                                    "const_arguments": [],
-                                    "arguments": [
-                                      {
-                                        "ArrayAccess": {
-                                          "array": {
-                                            "Identifier": {
-                                              "name": "bottom_half",
-                                              "id": 149
-                                            }
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 149
                                           },
-                                          "index": {
-                                            "Literal": {
-                                              "id": 150,
-                                              "variant": {
-                                                "Integer": [
-                                                  "U8",
-                                                  "9"
-                                                ]
-                                              }
-                                            }
-                                          },
-                                          "id": 151
+                                          "absolute_path": null,
+                                          "id": 150
                                         }
                                       },
                                       {
-                                        "Identifier": {
-                                          "name": "e",
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 151
+                                          },
+                                          "absolute_path": null,
                                           "id": 152
                                         }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "n",
-                                          "id": 153
-                                        }
                                       }
                                     ],
                                     "program": "zk_sra_encryption",
-                                    "id": 154
+                                    "id": 153
                                   }
                                 },
                                 {
                                   "Call": {
                                     "function": {
-                                      "name": "exp_by_squaring",
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 154
+                                      },
+                                      "absolute_path": null,
                                       "id": 155
                                     },
                                     "const_arguments": [],
@@ -766,128 +647,116 @@
                                       {
                                         "ArrayAccess": {
                                           "array": {
-                                            "Identifier": {
-                                              "name": "bottom_half",
-                                              "id": 156
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "bottom_half",
+                                                "id": 156
+                                              },
+                                              "absolute_path": null,
+                                              "id": 157
                                             }
                                           },
                                           "index": {
                                             "Literal": {
-                                              "id": 157,
+                                              "id": 158,
                                               "variant": {
                                                 "Integer": [
                                                   "U8",
-                                                  "10"
+                                                  "5"
                                                 ]
                                               }
                                             }
                                           },
-                                          "id": 158
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "e",
                                           "id": 159
                                         }
                                       },
                                       {
-                                        "Identifier": {
-                                          "name": "n",
-                                          "id": 160
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 160
+                                          },
+                                          "absolute_path": null,
+                                          "id": 161
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 162
+                                          },
+                                          "absolute_path": null,
+                                          "id": 163
                                         }
                                       }
                                     ],
                                     "program": "zk_sra_encryption",
-                                    "id": 161
+                                    "id": 164
                                   }
                                 },
                                 {
                                   "Call": {
                                     "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 162
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 165
+                                      },
+                                      "absolute_path": null,
+                                      "id": 166
                                     },
                                     "const_arguments": [],
                                     "arguments": [
                                       {
                                         "ArrayAccess": {
                                           "array": {
-                                            "Identifier": {
-                                              "name": "bottom_half",
-                                              "id": 163
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "bottom_half",
+                                                "id": 167
+                                              },
+                                              "absolute_path": null,
+                                              "id": 168
                                             }
                                           },
                                           "index": {
                                             "Literal": {
-                                              "id": 164,
+                                              "id": 169,
                                               "variant": {
                                                 "Integer": [
                                                   "U8",
-                                                  "11"
+                                                  "6"
                                                 ]
                                               }
                                             }
                                           },
-                                          "id": 165
+                                          "id": 170
                                         }
                                       },
                                       {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 166
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "n",
-                                          "id": 167
-                                        }
-                                      }
-                                    ],
-                                    "program": "zk_sra_encryption",
-                                    "id": 168
-                                  }
-                                },
-                                {
-                                  "Call": {
-                                    "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 169
-                                    },
-                                    "const_arguments": [],
-                                    "arguments": [
-                                      {
-                                        "ArrayAccess": {
-                                          "array": {
-                                            "Identifier": {
-                                              "name": "bottom_half",
-                                              "id": 170
-                                            }
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 171
                                           },
-                                          "index": {
-                                            "Literal": {
-                                              "id": 171,
-                                              "variant": {
-                                                "Integer": [
-                                                  "U8",
-                                                  "12"
-                                                ]
-                                              }
-                                            }
-                                          },
+                                          "absolute_path": null,
                                           "id": 172
                                         }
                                       },
                                       {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 173
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "n",
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 173
+                                          },
+                                          "absolute_path": null,
                                           "id": 174
                                         }
                                       }
@@ -899,143 +768,129 @@
                                 {
                                   "Call": {
                                     "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 176
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 176
+                                      },
+                                      "absolute_path": null,
+                                      "id": 177
                                     },
                                     "const_arguments": [],
                                     "arguments": [
                                       {
                                         "ArrayAccess": {
                                           "array": {
-                                            "Identifier": {
-                                              "name": "bottom_half",
-                                              "id": 177
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "bottom_half",
+                                                "id": 178
+                                              },
+                                              "absolute_path": null,
+                                              "id": 179
                                             }
                                           },
                                           "index": {
                                             "Literal": {
-                                              "id": 178,
+                                              "id": 180,
                                               "variant": {
                                                 "Integer": [
                                                   "U8",
-                                                  "13"
+                                                  "7"
                                                 ]
                                               }
                                             }
                                           },
-                                          "id": 179
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 180
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "n",
                                           "id": 181
                                         }
-                                      }
-                                    ],
-                                    "program": "zk_sra_encryption",
-                                    "id": 182
-                                  }
-                                }
-                              ],
-                              "id": 183
-                            }
-                          },
-                          {
-                            "Array": {
-                              "elements": [
-                                {
-                                  "Call": {
-                                    "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 184
-                                    },
-                                    "const_arguments": [],
-                                    "arguments": [
+                                      },
                                       {
-                                        "ArrayAccess": {
-                                          "array": {
-                                            "Identifier": {
-                                              "name": "top_half",
-                                              "id": 185
-                                            }
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 182
                                           },
-                                          "index": {
-                                            "Literal": {
-                                              "id": 186,
-                                              "variant": {
-                                                "Integer": [
-                                                  "U8",
-                                                  "0"
-                                                ]
-                                              }
-                                            }
-                                          },
-                                          "id": 187
+                                          "absolute_path": null,
+                                          "id": 183
                                         }
                                       },
                                       {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 188
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "n",
-                                          "id": 189
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 184
+                                          },
+                                          "absolute_path": null,
+                                          "id": 185
                                         }
                                       }
                                     ],
                                     "program": "zk_sra_encryption",
-                                    "id": 190
+                                    "id": 186
                                   }
                                 },
                                 {
                                   "Call": {
                                     "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 191
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 187
+                                      },
+                                      "absolute_path": null,
+                                      "id": 188
                                     },
                                     "const_arguments": [],
                                     "arguments": [
                                       {
                                         "ArrayAccess": {
                                           "array": {
-                                            "Identifier": {
-                                              "name": "top_half",
-                                              "id": 192
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "bottom_half",
+                                                "id": 189
+                                              },
+                                              "absolute_path": null,
+                                              "id": 190
                                             }
                                           },
                                           "index": {
                                             "Literal": {
-                                              "id": 193,
+                                              "id": 191,
                                               "variant": {
                                                 "Integer": [
                                                   "U8",
-                                                  "1"
+                                                  "8"
                                                 ]
                                               }
                                             }
                                           },
+                                          "id": 192
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 193
+                                          },
+                                          "absolute_path": null,
                                           "id": 194
                                         }
                                       },
                                       {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 195
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "n",
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 195
+                                          },
+                                          "absolute_path": null,
                                           "id": 196
                                         }
                                       }
@@ -1047,251 +902,227 @@
                                 {
                                   "Call": {
                                     "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 198
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 198
+                                      },
+                                      "absolute_path": null,
+                                      "id": 199
                                     },
                                     "const_arguments": [],
                                     "arguments": [
                                       {
                                         "ArrayAccess": {
                                           "array": {
-                                            "Identifier": {
-                                              "name": "top_half",
-                                              "id": 199
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "bottom_half",
+                                                "id": 200
+                                              },
+                                              "absolute_path": null,
+                                              "id": 201
                                             }
                                           },
                                           "index": {
                                             "Literal": {
-                                              "id": 200,
+                                              "id": 202,
                                               "variant": {
                                                 "Integer": [
                                                   "U8",
-                                                  "2"
+                                                  "9"
                                                 ]
                                               }
                                             }
                                           },
-                                          "id": 201
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 202
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "n",
                                           "id": 203
                                         }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 204
+                                          },
+                                          "absolute_path": null,
+                                          "id": 205
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 206
+                                          },
+                                          "absolute_path": null,
+                                          "id": 207
+                                        }
                                       }
                                     ],
                                     "program": "zk_sra_encryption",
-                                    "id": 204
+                                    "id": 208
                                   }
                                 },
                                 {
                                   "Call": {
                                     "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 205
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 209
+                                      },
+                                      "absolute_path": null,
+                                      "id": 210
                                     },
                                     "const_arguments": [],
                                     "arguments": [
                                       {
                                         "ArrayAccess": {
                                           "array": {
-                                            "Identifier": {
-                                              "name": "top_half",
-                                              "id": 206
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "bottom_half",
+                                                "id": 211
+                                              },
+                                              "absolute_path": null,
+                                              "id": 212
                                             }
                                           },
                                           "index": {
                                             "Literal": {
-                                              "id": 207,
+                                              "id": 213,
                                               "variant": {
                                                 "Integer": [
                                                   "U8",
-                                                  "3"
+                                                  "10"
                                                 ]
                                               }
                                             }
                                           },
-                                          "id": 208
+                                          "id": 214
                                         }
                                       },
                                       {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 209
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "n",
-                                          "id": 210
-                                        }
-                                      }
-                                    ],
-                                    "program": "zk_sra_encryption",
-                                    "id": 211
-                                  }
-                                },
-                                {
-                                  "Call": {
-                                    "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 212
-                                    },
-                                    "const_arguments": [],
-                                    "arguments": [
-                                      {
-                                        "ArrayAccess": {
-                                          "array": {
-                                            "Identifier": {
-                                              "name": "top_half",
-                                              "id": 213
-                                            }
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 215
                                           },
-                                          "index": {
-                                            "Literal": {
-                                              "id": 214,
-                                              "variant": {
-                                                "Integer": [
-                                                  "U8",
-                                                  "4"
-                                                ]
-                                              }
-                                            }
-                                          },
-                                          "id": 215
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "e",
+                                          "absolute_path": null,
                                           "id": 216
                                         }
                                       },
                                       {
-                                        "Identifier": {
-                                          "name": "n",
-                                          "id": 217
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 217
+                                          },
+                                          "absolute_path": null,
+                                          "id": 218
                                         }
                                       }
                                     ],
                                     "program": "zk_sra_encryption",
-                                    "id": 218
+                                    "id": 219
                                   }
                                 },
                                 {
                                   "Call": {
                                     "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 219
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 220
+                                      },
+                                      "absolute_path": null,
+                                      "id": 221
                                     },
                                     "const_arguments": [],
                                     "arguments": [
                                       {
                                         "ArrayAccess": {
                                           "array": {
-                                            "Identifier": {
-                                              "name": "top_half",
-                                              "id": 220
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "bottom_half",
+                                                "id": 222
+                                              },
+                                              "absolute_path": null,
+                                              "id": 223
                                             }
                                           },
                                           "index": {
                                             "Literal": {
-                                              "id": 221,
+                                              "id": 224,
                                               "variant": {
                                                 "Integer": [
                                                   "U8",
-                                                  "5"
+                                                  "11"
                                                 ]
                                               }
                                             }
                                           },
-                                          "id": 222
+                                          "id": 225
                                         }
                                       },
                                       {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 223
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 226
+                                          },
+                                          "absolute_path": null,
+                                          "id": 227
                                         }
                                       },
                                       {
-                                        "Identifier": {
-                                          "name": "n",
-                                          "id": 224
-                                        }
-                                      }
-                                    ],
-                                    "program": "zk_sra_encryption",
-                                    "id": 225
-                                  }
-                                },
-                                {
-                                  "Call": {
-                                    "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 226
-                                    },
-                                    "const_arguments": [],
-                                    "arguments": [
-                                      {
-                                        "ArrayAccess": {
-                                          "array": {
-                                            "Identifier": {
-                                              "name": "top_half",
-                                              "id": 227
-                                            }
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 228
                                           },
-                                          "index": {
-                                            "Literal": {
-                                              "id": 228,
-                                              "variant": {
-                                                "Integer": [
-                                                  "U8",
-                                                  "6"
-                                                ]
-                                              }
-                                            }
-                                          },
+                                          "absolute_path": null,
                                           "id": 229
                                         }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 230
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "n",
-                                          "id": 231
-                                        }
                                       }
                                     ],
                                     "program": "zk_sra_encryption",
-                                    "id": 232
+                                    "id": 230
                                   }
                                 },
                                 {
                                   "Call": {
                                     "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 233
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 231
+                                      },
+                                      "absolute_path": null,
+                                      "id": 232
                                     },
                                     "const_arguments": [],
                                     "arguments": [
                                       {
                                         "ArrayAccess": {
                                           "array": {
-                                            "Identifier": {
-                                              "name": "top_half",
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "bottom_half",
+                                                "id": 233
+                                              },
+                                              "absolute_path": null,
                                               "id": 234
                                             }
                                           },
@@ -1301,7 +1132,7 @@
                                               "variant": {
                                                 "Integer": [
                                                   "U8",
-                                                  "7"
+                                                  "12"
                                                 ]
                                               }
                                             }
@@ -1310,276 +1141,61 @@
                                         }
                                       },
                                       {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 237
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "n",
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 237
+                                          },
+                                          "absolute_path": null,
                                           "id": 238
                                         }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 239
+                                          },
+                                          "absolute_path": null,
+                                          "id": 240
+                                        }
                                       }
                                     ],
                                     "program": "zk_sra_encryption",
-                                    "id": 239
+                                    "id": 241
                                   }
                                 },
                                 {
                                   "Call": {
                                     "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 240
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 242
+                                      },
+                                      "absolute_path": null,
+                                      "id": 243
                                     },
                                     "const_arguments": [],
                                     "arguments": [
                                       {
                                         "ArrayAccess": {
                                           "array": {
-                                            "Identifier": {
-                                              "name": "top_half",
-                                              "id": 241
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "bottom_half",
+                                                "id": 244
+                                              },
+                                              "absolute_path": null,
+                                              "id": 245
                                             }
                                           },
                                           "index": {
                                             "Literal": {
-                                              "id": 242,
-                                              "variant": {
-                                                "Integer": [
-                                                  "U8",
-                                                  "8"
-                                                ]
-                                              }
-                                            }
-                                          },
-                                          "id": 243
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 244
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "n",
-                                          "id": 245
-                                        }
-                                      }
-                                    ],
-                                    "program": "zk_sra_encryption",
-                                    "id": 246
-                                  }
-                                },
-                                {
-                                  "Call": {
-                                    "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 247
-                                    },
-                                    "const_arguments": [],
-                                    "arguments": [
-                                      {
-                                        "ArrayAccess": {
-                                          "array": {
-                                            "Identifier": {
-                                              "name": "top_half",
-                                              "id": 248
-                                            }
-                                          },
-                                          "index": {
-                                            "Literal": {
-                                              "id": 249,
-                                              "variant": {
-                                                "Integer": [
-                                                  "U8",
-                                                  "9"
-                                                ]
-                                              }
-                                            }
-                                          },
-                                          "id": 250
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 251
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "n",
-                                          "id": 252
-                                        }
-                                      }
-                                    ],
-                                    "program": "zk_sra_encryption",
-                                    "id": 253
-                                  }
-                                },
-                                {
-                                  "Call": {
-                                    "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 254
-                                    },
-                                    "const_arguments": [],
-                                    "arguments": [
-                                      {
-                                        "ArrayAccess": {
-                                          "array": {
-                                            "Identifier": {
-                                              "name": "top_half",
-                                              "id": 255
-                                            }
-                                          },
-                                          "index": {
-                                            "Literal": {
-                                              "id": 256,
-                                              "variant": {
-                                                "Integer": [
-                                                  "U8",
-                                                  "10"
-                                                ]
-                                              }
-                                            }
-                                          },
-                                          "id": 257
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 258
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "n",
-                                          "id": 259
-                                        }
-                                      }
-                                    ],
-                                    "program": "zk_sra_encryption",
-                                    "id": 260
-                                  }
-                                },
-                                {
-                                  "Call": {
-                                    "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 261
-                                    },
-                                    "const_arguments": [],
-                                    "arguments": [
-                                      {
-                                        "ArrayAccess": {
-                                          "array": {
-                                            "Identifier": {
-                                              "name": "top_half",
-                                              "id": 262
-                                            }
-                                          },
-                                          "index": {
-                                            "Literal": {
-                                              "id": 263,
-                                              "variant": {
-                                                "Integer": [
-                                                  "U8",
-                                                  "11"
-                                                ]
-                                              }
-                                            }
-                                          },
-                                          "id": 264
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 265
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "n",
-                                          "id": 266
-                                        }
-                                      }
-                                    ],
-                                    "program": "zk_sra_encryption",
-                                    "id": 267
-                                  }
-                                },
-                                {
-                                  "Call": {
-                                    "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 268
-                                    },
-                                    "const_arguments": [],
-                                    "arguments": [
-                                      {
-                                        "ArrayAccess": {
-                                          "array": {
-                                            "Identifier": {
-                                              "name": "top_half",
-                                              "id": 269
-                                            }
-                                          },
-                                          "index": {
-                                            "Literal": {
-                                              "id": 270,
-                                              "variant": {
-                                                "Integer": [
-                                                  "U8",
-                                                  "12"
-                                                ]
-                                              }
-                                            }
-                                          },
-                                          "id": 271
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 272
-                                        }
-                                      },
-                                      {
-                                        "Identifier": {
-                                          "name": "n",
-                                          "id": 273
-                                        }
-                                      }
-                                    ],
-                                    "program": "zk_sra_encryption",
-                                    "id": 274
-                                  }
-                                },
-                                {
-                                  "Call": {
-                                    "function": {
-                                      "name": "exp_by_squaring",
-                                      "id": 275
-                                    },
-                                    "const_arguments": [],
-                                    "arguments": [
-                                      {
-                                        "ArrayAccess": {
-                                          "array": {
-                                            "Identifier": {
-                                              "name": "top_half",
-                                              "id": 276
-                                            }
-                                          },
-                                          "index": {
-                                            "Literal": {
-                                              "id": 277,
+                                              "id": 246,
                                               "variant": {
                                                 "Integer": [
                                                   "U8",
@@ -1588,52 +1204,1012 @@
                                               }
                                             }
                                           },
-                                          "id": 278
+                                          "id": 247
                                         }
                                       },
                                       {
-                                        "Identifier": {
-                                          "name": "e",
-                                          "id": 279
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 248
+                                          },
+                                          "absolute_path": null,
+                                          "id": 249
                                         }
                                       },
                                       {
-                                        "Identifier": {
-                                          "name": "n",
-                                          "id": 280
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 250
+                                          },
+                                          "absolute_path": null,
+                                          "id": 251
                                         }
                                       }
                                     ],
                                     "program": "zk_sra_encryption",
-                                    "id": 281
+                                    "id": 252
                                   }
                                 }
                               ],
-                              "id": 282
+                              "id": 253
+                            }
+                          },
+                          {
+                            "Array": {
+                              "elements": [
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 254
+                                      },
+                                      "absolute_path": null,
+                                      "id": 255
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "top_half",
+                                                "id": 256
+                                              },
+                                              "absolute_path": null,
+                                              "id": 257
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 258,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "0"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 259
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 260
+                                          },
+                                          "absolute_path": null,
+                                          "id": 261
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 262
+                                          },
+                                          "absolute_path": null,
+                                          "id": 263
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 264
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 265
+                                      },
+                                      "absolute_path": null,
+                                      "id": 266
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "top_half",
+                                                "id": 267
+                                              },
+                                              "absolute_path": null,
+                                              "id": 268
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 269,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "1"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 270
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 271
+                                          },
+                                          "absolute_path": null,
+                                          "id": 272
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 273
+                                          },
+                                          "absolute_path": null,
+                                          "id": 274
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 275
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 276
+                                      },
+                                      "absolute_path": null,
+                                      "id": 277
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "top_half",
+                                                "id": 278
+                                              },
+                                              "absolute_path": null,
+                                              "id": 279
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 280,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "2"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 281
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 282
+                                          },
+                                          "absolute_path": null,
+                                          "id": 283
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 284
+                                          },
+                                          "absolute_path": null,
+                                          "id": 285
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 286
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 287
+                                      },
+                                      "absolute_path": null,
+                                      "id": 288
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "top_half",
+                                                "id": 289
+                                              },
+                                              "absolute_path": null,
+                                              "id": 290
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 291,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "3"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 292
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 293
+                                          },
+                                          "absolute_path": null,
+                                          "id": 294
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 295
+                                          },
+                                          "absolute_path": null,
+                                          "id": 296
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 297
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 298
+                                      },
+                                      "absolute_path": null,
+                                      "id": 299
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "top_half",
+                                                "id": 300
+                                              },
+                                              "absolute_path": null,
+                                              "id": 301
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 302,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "4"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 303
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 304
+                                          },
+                                          "absolute_path": null,
+                                          "id": 305
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 306
+                                          },
+                                          "absolute_path": null,
+                                          "id": 307
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 308
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 309
+                                      },
+                                      "absolute_path": null,
+                                      "id": 310
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "top_half",
+                                                "id": 311
+                                              },
+                                              "absolute_path": null,
+                                              "id": 312
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 313,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "5"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 314
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 315
+                                          },
+                                          "absolute_path": null,
+                                          "id": 316
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 317
+                                          },
+                                          "absolute_path": null,
+                                          "id": 318
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 319
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 320
+                                      },
+                                      "absolute_path": null,
+                                      "id": 321
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "top_half",
+                                                "id": 322
+                                              },
+                                              "absolute_path": null,
+                                              "id": 323
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 324,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "6"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 325
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 326
+                                          },
+                                          "absolute_path": null,
+                                          "id": 327
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 328
+                                          },
+                                          "absolute_path": null,
+                                          "id": 329
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 330
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 331
+                                      },
+                                      "absolute_path": null,
+                                      "id": 332
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "top_half",
+                                                "id": 333
+                                              },
+                                              "absolute_path": null,
+                                              "id": 334
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 335,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "7"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 336
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 337
+                                          },
+                                          "absolute_path": null,
+                                          "id": 338
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 339
+                                          },
+                                          "absolute_path": null,
+                                          "id": 340
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 341
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 342
+                                      },
+                                      "absolute_path": null,
+                                      "id": 343
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "top_half",
+                                                "id": 344
+                                              },
+                                              "absolute_path": null,
+                                              "id": 345
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 346,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "8"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 347
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 348
+                                          },
+                                          "absolute_path": null,
+                                          "id": 349
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 350
+                                          },
+                                          "absolute_path": null,
+                                          "id": 351
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 352
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 353
+                                      },
+                                      "absolute_path": null,
+                                      "id": 354
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "top_half",
+                                                "id": 355
+                                              },
+                                              "absolute_path": null,
+                                              "id": 356
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 357,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "9"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 358
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 359
+                                          },
+                                          "absolute_path": null,
+                                          "id": 360
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 361
+                                          },
+                                          "absolute_path": null,
+                                          "id": 362
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 363
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 364
+                                      },
+                                      "absolute_path": null,
+                                      "id": 365
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "top_half",
+                                                "id": 366
+                                              },
+                                              "absolute_path": null,
+                                              "id": 367
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 368,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "10"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 369
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 370
+                                          },
+                                          "absolute_path": null,
+                                          "id": 371
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 372
+                                          },
+                                          "absolute_path": null,
+                                          "id": 373
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 374
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 375
+                                      },
+                                      "absolute_path": null,
+                                      "id": 376
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "top_half",
+                                                "id": 377
+                                              },
+                                              "absolute_path": null,
+                                              "id": 378
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 379,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "11"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 380
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 381
+                                          },
+                                          "absolute_path": null,
+                                          "id": 382
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 383
+                                          },
+                                          "absolute_path": null,
+                                          "id": 384
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 385
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 386
+                                      },
+                                      "absolute_path": null,
+                                      "id": 387
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "top_half",
+                                                "id": 388
+                                              },
+                                              "absolute_path": null,
+                                              "id": 389
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 390,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "12"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 391
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 392
+                                          },
+                                          "absolute_path": null,
+                                          "id": 393
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 394
+                                          },
+                                          "absolute_path": null,
+                                          "id": 395
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 396
+                                  }
+                                },
+                                {
+                                  "Call": {
+                                    "function": {
+                                      "qualifier": [],
+                                      "identifier": {
+                                        "name": "exp_by_squaring",
+                                        "id": 397
+                                      },
+                                      "absolute_path": null,
+                                      "id": 398
+                                    },
+                                    "const_arguments": [],
+                                    "arguments": [
+                                      {
+                                        "ArrayAccess": {
+                                          "array": {
+                                            "Path": {
+                                              "qualifier": [],
+                                              "identifier": {
+                                                "name": "top_half",
+                                                "id": 399
+                                              },
+                                              "absolute_path": null,
+                                              "id": 400
+                                            }
+                                          },
+                                          "index": {
+                                            "Literal": {
+                                              "id": 401,
+                                              "variant": {
+                                                "Integer": [
+                                                  "U8",
+                                                  "13"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "id": 402
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "e",
+                                            "id": 403
+                                          },
+                                          "absolute_path": null,
+                                          "id": 404
+                                        }
+                                      },
+                                      {
+                                        "Path": {
+                                          "qualifier": [],
+                                          "identifier": {
+                                            "name": "n",
+                                            "id": 405
+                                          },
+                                          "absolute_path": null,
+                                          "id": 406
+                                        }
+                                      }
+                                    ],
+                                    "program": "zk_sra_encryption",
+                                    "id": 407
+                                  }
+                                }
+                              ],
+                              "id": 408
                             }
                           }
                         ],
-                        "id": 283
+                        "id": 409
                       }
                     },
-                    "id": 284
+                    "id": 410
                   }
                 },
                 {
                   "Return": {
                     "expression": {
-                      "Identifier": {
-                        "name": "encrypted_deck",
-                        "id": 285
+                      "Path": {
+                        "qualifier": [],
+                        "identifier": {
+                          "name": "encrypted_deck",
+                          "id": 411
+                        },
+                        "absolute_path": null,
+                        "id": 412
                       }
                     },
-                    "id": 286
+                    "id": 413
                   }
                 }
               ],
-              "id": 287
+              "id": 414
             },
-            "id": 288
+            "id": 415
           }
         ],
         [
@@ -1643,42 +2219,42 @@
             "variant": "Transition",
             "identifier": {
               "name": "decrypt_card",
-              "id": 289
+              "id": 416
             },
             "const_parameters": [],
             "input": [
               {
                 "identifier": {
                   "name": "d",
-                  "id": 290
+                  "id": 417
                 },
                 "mode": "None",
                 "type_": {
                   "Integer": "U128"
                 },
-                "id": 291
+                "id": 418
               },
               {
                 "identifier": {
                   "name": "n",
-                  "id": 292
+                  "id": 419
                 },
                 "mode": "None",
                 "type_": {
                   "Integer": "U128"
                 },
-                "id": 293
+                "id": 420
               },
               {
                 "identifier": {
                   "name": "card",
-                  "id": 294
+                  "id": 421
                 },
                 "mode": "None",
                 "type_": {
                   "Integer": "U128"
                 },
-                "id": 295
+                "id": 422
               }
             ],
             "output": [
@@ -1687,7 +2263,7 @@
                 "type_": {
                   "Integer": "U128"
                 },
-                "id": 296
+                "id": 423
               }
             ],
             "output_type": {
@@ -1700,41 +2276,61 @@
                     "expression": {
                       "Call": {
                         "function": {
-                          "name": "exp_by_squaring",
-                          "id": 297
+                          "qualifier": [],
+                          "identifier": {
+                            "name": "exp_by_squaring",
+                            "id": 424
+                          },
+                          "absolute_path": null,
+                          "id": 425
                         },
                         "const_arguments": [],
                         "arguments": [
                           {
-                            "Identifier": {
-                              "name": "card",
-                              "id": 298
+                            "Path": {
+                              "qualifier": [],
+                              "identifier": {
+                                "name": "card",
+                                "id": 426
+                              },
+                              "absolute_path": null,
+                              "id": 427
                             }
                           },
                           {
-                            "Identifier": {
-                              "name": "d",
-                              "id": 299
+                            "Path": {
+                              "qualifier": [],
+                              "identifier": {
+                                "name": "d",
+                                "id": 428
+                              },
+                              "absolute_path": null,
+                              "id": 429
                             }
                           },
                           {
-                            "Identifier": {
-                              "name": "n",
-                              "id": 300
+                            "Path": {
+                              "qualifier": [],
+                              "identifier": {
+                                "name": "n",
+                                "id": 430
+                              },
+                              "absolute_path": null,
+                              "id": 431
                             }
                           }
                         ],
                         "program": "zk_sra_encryption",
-                        "id": 301
+                        "id": 432
                       }
                     },
-                    "id": 302
+                    "id": 433
                   }
                 }
               ],
-              "id": 303
+              "id": 434
             },
-            "id": 304
+            "id": 435
           }
         ],
         [
@@ -1744,53 +2340,53 @@
             "variant": "Transition",
             "identifier": {
               "name": "test_encrypt_exp_by_squaring",
-              "id": 305
+              "id": 436
             },
             "const_parameters": [],
             "input": [
               {
                 "identifier": {
                   "name": "m",
-                  "id": 306
+                  "id": 437
                 },
                 "mode": "Public",
                 "type_": {
                   "Integer": "U128"
                 },
-                "id": 307
+                "id": 438
               },
               {
                 "identifier": {
                   "name": "e",
-                  "id": 308
+                  "id": 439
                 },
                 "mode": "None",
                 "type_": {
                   "Integer": "U128"
                 },
-                "id": 309
+                "id": 440
               },
               {
                 "identifier": {
                   "name": "d",
-                  "id": 310
+                  "id": 441
                 },
                 "mode": "None",
                 "type_": {
                   "Integer": "U128"
                 },
-                "id": 311
+                "id": 442
               },
               {
                 "identifier": {
                   "name": "n",
-                  "id": 312
+                  "id": 443
                 },
                 "mode": "None",
                 "type_": {
                   "Integer": "U128"
                 },
-                "id": 313
+                "id": 444
               }
             ],
             "output": [
@@ -1799,14 +2395,14 @@
                 "type_": {
                   "Integer": "U128"
                 },
-                "id": 314
+                "id": 445
               },
               {
                 "mode": "None",
                 "type_": {
                   "Integer": "U128"
                 },
-                "id": 315
+                "id": 446
               }
             ],
             "output_type": {
@@ -1828,7 +2424,7 @@
                     "place": {
                       "Single": {
                         "name": "c",
-                        "id": 316
+                        "id": 447
                       }
                     },
                     "type_": {
@@ -1837,35 +2433,55 @@
                     "value": {
                       "Call": {
                         "function": {
-                          "name": "exp_by_squaring",
-                          "id": 317
+                          "qualifier": [],
+                          "identifier": {
+                            "name": "exp_by_squaring",
+                            "id": 448
+                          },
+                          "absolute_path": null,
+                          "id": 449
                         },
                         "const_arguments": [],
                         "arguments": [
                           {
-                            "Identifier": {
-                              "name": "m",
-                              "id": 318
+                            "Path": {
+                              "qualifier": [],
+                              "identifier": {
+                                "name": "m",
+                                "id": 450
+                              },
+                              "absolute_path": null,
+                              "id": 451
                             }
                           },
                           {
-                            "Identifier": {
-                              "name": "e",
-                              "id": 319
+                            "Path": {
+                              "qualifier": [],
+                              "identifier": {
+                                "name": "e",
+                                "id": 452
+                              },
+                              "absolute_path": null,
+                              "id": 453
                             }
                           },
                           {
-                            "Identifier": {
-                              "name": "n",
-                              "id": 320
+                            "Path": {
+                              "qualifier": [],
+                              "identifier": {
+                                "name": "n",
+                                "id": 454
+                              },
+                              "absolute_path": null,
+                              "id": 455
                             }
                           }
                         ],
                         "program": "zk_sra_encryption",
-                        "id": 321
+                        "id": 456
                       }
                     },
-                    "id": 322
+                    "id": 457
                   }
                 },
                 {
@@ -1873,7 +2489,7 @@
                     "place": {
                       "Single": {
                         "name": "p",
-                        "id": 323
+                        "id": 458
                       }
                     },
                     "type_": {
@@ -1882,35 +2498,55 @@
                     "value": {
                       "Call": {
                         "function": {
-                          "name": "exp_by_squaring",
-                          "id": 324
+                          "qualifier": [],
+                          "identifier": {
+                            "name": "exp_by_squaring",
+                            "id": 459
+                          },
+                          "absolute_path": null,
+                          "id": 460
                         },
                         "const_arguments": [],
                         "arguments": [
                           {
-                            "Identifier": {
-                              "name": "c",
-                              "id": 325
+                            "Path": {
+                              "qualifier": [],
+                              "identifier": {
+                                "name": "c",
+                                "id": 461
+                              },
+                              "absolute_path": null,
+                              "id": 462
                             }
                           },
                           {
-                            "Identifier": {
-                              "name": "d",
-                              "id": 326
+                            "Path": {
+                              "qualifier": [],
+                              "identifier": {
+                                "name": "d",
+                                "id": 463
+                              },
+                              "absolute_path": null,
+                              "id": 464
                             }
                           },
                           {
-                            "Identifier": {
-                              "name": "n",
-                              "id": 327
+                            "Path": {
+                              "qualifier": [],
+                              "identifier": {
+                                "name": "n",
+                                "id": 465
+                              },
+                              "absolute_path": null,
+                              "id": 466
                             }
                           }
                         ],
                         "program": "zk_sra_encryption",
-                        "id": 328
+                        "id": 467
                       }
                     },
-                    "id": 329
+                    "id": 468
                   }
                 },
                 {
@@ -1918,20 +2554,30 @@
                     "variant": {
                       "AssertEq": [
                         {
-                          "Identifier": {
-                            "name": "m",
-                            "id": 330
+                          "Path": {
+                            "qualifier": [],
+                            "identifier": {
+                              "name": "m",
+                              "id": 469
+                            },
+                            "absolute_path": null,
+                            "id": 470
                           }
                         },
                         {
-                          "Identifier": {
-                            "name": "p",
-                            "id": 331
+                          "Path": {
+                            "qualifier": [],
+                            "identifier": {
+                              "name": "p",
+                              "id": 471
+                            },
+                            "absolute_path": null,
+                            "id": 472
                           }
                         }
                       ]
                     },
-                    "id": 332
+                    "id": 473
                   }
                 },
                 {
@@ -1940,28 +2586,38 @@
                       "Tuple": {
                         "elements": [
                           {
-                            "Identifier": {
-                              "name": "c",
-                              "id": 333
+                            "Path": {
+                              "qualifier": [],
+                              "identifier": {
+                                "name": "c",
+                                "id": 474
+                              },
+                              "absolute_path": null,
+                              "id": 475
                             }
                           },
                           {
-                            "Identifier": {
-                              "name": "p",
-                              "id": 334
+                            "Path": {
+                              "qualifier": [],
+                              "identifier": {
+                                "name": "p",
+                                "id": 476
+                              },
+                              "absolute_path": null,
+                              "id": 477
                             }
                           }
                         ],
-                        "id": 335
+                        "id": 478
                       }
                     },
-                    "id": 336
+                    "id": 479
                   }
                 }
               ],
-              "id": 337
+              "id": 480
             },
-            "id": 338
+            "id": 481
           }
         ],
         [
@@ -1971,53 +2627,53 @@
             "variant": "Transition",
             "identifier": {
               "name": "test_exp_by_squaring",
-              "id": 339
+              "id": 482
             },
             "const_parameters": [],
             "input": [
               {
                 "identifier": {
                   "name": "m",
-                  "id": 340
+                  "id": 483
                 },
                 "mode": "Public",
                 "type_": {
                   "Integer": "U128"
                 },
-                "id": 341
+                "id": 484
               },
               {
                 "identifier": {
                   "name": "d1",
-                  "id": 342
+                  "id": 485
                 },
                 "mode": "None",
                 "type_": {
                   "Integer": "U128"
                 },
-                "id": 343
+                "id": 486
               },
               {
                 "identifier": {
                   "name": "d2",
-                  "id": 344
+                  "id": 487
                 },
                 "mode": "None",
                 "type_": {
                   "Integer": "U128"
                 },
-                "id": 345
+                "id": 488
               },
               {
                 "identifier": {
                   "name": "n",
-                  "id": 346
+                  "id": 489
                 },
                 "mode": "None",
                 "type_": {
                   "Integer": "U128"
                 },
-                "id": 347
+                "id": 490
               }
             ],
             "output": [
@@ -2026,14 +2682,14 @@
                 "type_": {
                   "Integer": "U128"
                 },
-                "id": 348
+                "id": 491
               },
               {
                 "mode": "None",
                 "type_": {
                   "Integer": "U128"
                 },
-                "id": 349
+                "id": 492
               }
             ],
             "output_type": {
@@ -2055,7 +2711,7 @@
                     "place": {
                       "Single": {
                         "name": "m1",
-                        "id": 350
+                        "id": 493
                       }
                     },
                     "type_": {
@@ -2064,35 +2720,55 @@
                     "value": {
                       "Call": {
                         "function": {
-                          "name": "exp_by_squaring",
-                          "id": 351
+                          "qualifier": [],
+                          "identifier": {
+                            "name": "exp_by_squaring",
+                            "id": 494
+                          },
+                          "absolute_path": null,
+                          "id": 495
                         },
                         "const_arguments": [],
                         "arguments": [
                           {
-                            "Identifier": {
-                              "name": "m",
-                              "id": 352
+                            "Path": {
+                              "qualifier": [],
+                              "identifier": {
+                                "name": "m",
+                                "id": 496
+                              },
+                              "absolute_path": null,
+                              "id": 497
                             }
                           },
                           {
-                            "Identifier": {
-                              "name": "d1",
-                              "id": 353
+                            "Path": {
+                              "qualifier": [],
+                              "identifier": {
+                                "name": "d1",
+                                "id": 498
+                              },
+                              "absolute_path": null,
+                              "id": 499
                             }
                           },
                           {
-                            "Identifier": {
-                              "name": "n",
-                              "id": 354
+                            "Path": {
+                              "qualifier": [],
+                              "identifier": {
+                                "name": "n",
+                                "id": 500
+                              },
+                              "absolute_path": null,
+                              "id": 501
                             }
                           }
                         ],
                         "program": "zk_sra_encryption",
-                        "id": 355
+                        "id": 502
                       }
                     },
-                    "id": 356
+                    "id": 503
                   }
                 },
                 {
@@ -2100,7 +2776,7 @@
                     "place": {
                       "Single": {
                         "name": "p",
-                        "id": 357
+                        "id": 504
                       }
                     },
                     "type_": {
@@ -2109,35 +2785,55 @@
                     "value": {
                       "Call": {
                         "function": {
-                          "name": "exp_by_squaring",
-                          "id": 358
+                          "qualifier": [],
+                          "identifier": {
+                            "name": "exp_by_squaring",
+                            "id": 505
+                          },
+                          "absolute_path": null,
+                          "id": 506
                         },
                         "const_arguments": [],
                         "arguments": [
                           {
-                            "Identifier": {
-                              "name": "m1",
-                              "id": 359
+                            "Path": {
+                              "qualifier": [],
+                              "identifier": {
+                                "name": "m1",
+                                "id": 507
+                              },
+                              "absolute_path": null,
+                              "id": 508
                             }
                           },
                           {
-                            "Identifier": {
-                              "name": "d2",
-                              "id": 360
+                            "Path": {
+                              "qualifier": [],
+                              "identifier": {
+                                "name": "d2",
+                                "id": 509
+                              },
+                              "absolute_path": null,
+                              "id": 510
                             }
                           },
                           {
-                            "Identifier": {
-                              "name": "n",
-                              "id": 361
+                            "Path": {
+                              "qualifier": [],
+                              "identifier": {
+                                "name": "n",
+                                "id": 511
+                              },
+                              "absolute_path": null,
+                              "id": 512
                             }
                           }
                         ],
                         "program": "zk_sra_encryption",
-                        "id": 362
+                        "id": 513
                       }
                     },
-                    "id": 363
+                    "id": 514
                   }
                 },
                 {
@@ -2146,28 +2842,38 @@
                       "Tuple": {
                         "elements": [
                           {
-                            "Identifier": {
-                              "name": "m1",
-                              "id": 364
+                            "Path": {
+                              "qualifier": [],
+                              "identifier": {
+                                "name": "m1",
+                                "id": 515
+                              },
+                              "absolute_path": null,
+                              "id": 516
                             }
                           },
                           {
-                            "Identifier": {
-                              "name": "p",
-                              "id": 365
+                            "Path": {
+                              "qualifier": [],
+                              "identifier": {
+                                "name": "p",
+                                "id": 517
+                              },
+                              "absolute_path": null,
+                              "id": 518
                             }
                           }
                         ],
-                        "id": 366
+                        "id": 519
                       }
                     },
-                    "id": 367
+                    "id": 520
                   }
                 }
               ],
-              "id": 368
+              "id": 521
             },
-            "id": 369
+            "id": 522
           }
         ],
         [
@@ -2266,26 +2972,31 @@
                       "Integer": "U128"
                     },
                     "value": {
-                      "Identifier": {
-                        "name": "base",
-                        "id": 18
+                      "Path": {
+                        "qualifier": [],
+                        "identifier": {
+                          "name": "base",
+                          "id": 18
+                        },
+                        "absolute_path": null,
+                        "id": 19
                       }
                     },
-                    "id": 19
+                    "id": 20
                   }
                 },
                 {
                   "Iteration": {
                     "variable": {
                       "name": "i",
-                      "id": 20
+                      "id": 21
                     },
                     "type_": {
                       "Integer": "U8"
                     },
                     "start": {
                       "Literal": {
-                        "id": 21,
+                        "id": 22,
                         "variant": {
                           "Integer": [
                             "U8",
@@ -2296,7 +3007,7 @@
                     },
                     "stop": {
                       "Literal": {
-                        "id": 22,
+                        "id": 23,
                         "variant": {
                           "Integer": [
                             "U8",
@@ -2315,14 +3026,19 @@
                                 "left": {
                                   "Binary": {
                                     "left": {
-                                      "Identifier": {
-                                        "name": "exp",
-                                        "id": 23
+                                      "Path": {
+                                        "qualifier": [],
+                                        "identifier": {
+                                          "name": "exp",
+                                          "id": 24
+                                        },
+                                        "absolute_path": null,
+                                        "id": 25
                                       }
                                     },
                                     "right": {
                                       "Literal": {
-                                        "id": 24,
+                                        "id": 26,
                                         "variant": {
                                           "Integer": [
                                             "U128",
@@ -2332,12 +3048,12 @@
                                       }
                                     },
                                     "op": "Rem",
-                                    "id": 25
+                                    "id": 27
                                   }
                                 },
                                 "right": {
                                   "Literal": {
-                                    "id": 26,
+                                    "id": 28,
                                     "variant": {
                                       "Integer": [
                                         "U128",
@@ -2347,7 +3063,7 @@
                                   }
                                 },
                                 "op": "Eq",
-                                "id": 27
+                                "id": 29
                               }
                             },
                             "then": {
@@ -2355,9 +3071,14 @@
                                 {
                                   "Assign": {
                                     "place": {
-                                      "Identifier": {
-                                        "name": "result",
-                                        "id": 28
+                                      "Path": {
+                                        "qualifier": [],
+                                        "identifier": {
+                                          "name": "result",
+                                          "id": 30
+                                        },
+                                        "absolute_path": null,
+                                        "id": 31
                                       }
                                     },
                                     "value": {
@@ -2365,47 +3086,67 @@
                                         "left": {
                                           "Binary": {
                                             "left": {
-                                              "Identifier": {
-                                                "name": "result",
-                                                "id": 29
+                                              "Path": {
+                                                "qualifier": [],
+                                                "identifier": {
+                                                  "name": "result",
+                                                  "id": 32
+                                                },
+                                                "absolute_path": null,
+                                                "id": 33
                                               }
                                             },
                                             "right": {
-                                              "Identifier": {
-                                                "name": "current_base",
-                                                "id": 30
+                                              "Path": {
+                                                "qualifier": [],
+                                                "identifier": {
+                                                  "name": "current_base",
+                                                  "id": 34
+                                                },
+                                                "absolute_path": null,
+                                                "id": 35
                                               }
                                             },
                                             "op": "Mul",
-                                            "id": 31
+                                            "id": 36
                                           }
                                         },
                                         "right": {
-                                          "Identifier": {
-                                            "name": "modulus",
-                                            "id": 32
+                                          "Path": {
+                                            "qualifier": [],
+                                            "identifier": {
+                                              "name": "modulus",
+                                              "id": 37
+                                            },
+                                            "absolute_path": null,
+                                            "id": 38
                                           }
                                         },
                                         "op": "Rem",
-                                        "id": 33
+                                        "id": 39
                                       }
                                     },
-                                    "id": 35
+                                    "id": 41
                                   }
                                 }
                               ],
-                              "id": 36
+                              "id": 42
                             },
                             "otherwise": null,
-                            "id": 37
+                            "id": 43
                           }
                         },
                         {
                           "Assign": {
                             "place": {
-                              "Identifier": {
-                                "name": "current_base",
-                                "id": 38
+                              "Path": {
+                                "qualifier": [],
+                                "identifier": {
+                                  "name": "current_base",
+                                  "id": 44
+                                },
+                                "absolute_path": null,
+                                "id": 45
                               }
                             },
                             "value": {
@@ -2413,53 +3154,78 @@
                                 "left": {
                                   "Binary": {
                                     "left": {
-                                      "Identifier": {
-                                        "name": "current_base",
-                                        "id": 39
+                                      "Path": {
+                                        "qualifier": [],
+                                        "identifier": {
+                                          "name": "current_base",
+                                          "id": 46
+                                        },
+                                        "absolute_path": null,
+                                        "id": 47
                                       }
                                     },
                                     "right": {
-                                      "Identifier": {
-                                        "name": "current_base",
-                                        "id": 40
+                                      "Path": {
+                                        "qualifier": [],
+                                        "identifier": {
+                                          "name": "current_base",
+                                          "id": 48
+                                        },
+                                        "absolute_path": null,
+                                        "id": 49
                                       }
                                     },
                                     "op": "Mul",
-                                    "id": 41
+                                    "id": 50
                                   }
                                 },
                                 "right": {
-                                  "Identifier": {
-                                    "name": "modulus",
-                                    "id": 42
+                                  "Path": {
+                                    "qualifier": [],
+                                    "identifier": {
+                                      "name": "modulus",
+                                      "id": 51
+                                    },
+                                    "absolute_path": null,
+                                    "id": 52
                                   }
                                 },
                                 "op": "Rem",
-                                "id": 43
+                                "id": 53
                               }
                             },
-                            "id": 45
+                            "id": 55
                           }
                         },
                         {
                           "Assign": {
                             "place": {
-                              "Identifier": {
-                                "name": "exp",
-                                "id": 46
+                              "Path": {
+                                "qualifier": [],
+                                "identifier": {
+                                  "name": "exp",
+                                  "id": 56
+                                },
+                                "absolute_path": null,
+                                "id": 57
                               }
                             },
                             "value": {
                               "Binary": {
                                 "left": {
-                                  "Identifier": {
-                                    "name": "exp",
-                                    "id": 48
+                                  "Path": {
+                                    "qualifier": [],
+                                    "identifier": {
+                                      "name": "exp",
+                                      "id": 56
+                                    },
+                                    "absolute_path": null,
+                                    "id": 59
                                   }
                                 },
                                 "right": {
                                   "Literal": {
-                                    "id": 47,
+                                    "id": 58,
                                     "variant": {
                                       "Integer": [
                                         "U8",
@@ -2469,16 +3235,16 @@
                                   }
                                 },
                                 "op": "Shr",
-                                "id": 49
+                                "id": 60
                               }
                             },
-                            "id": 50
+                            "id": 61
                           }
                         }
                       ],
-                      "id": 51
+                      "id": 62
                     },
-                    "id": 52
+                    "id": 63
                   }
                 },
                 {
@@ -2486,24 +3252,29 @@
                     "expression": {
                       "Cast": {
                         "expression": {
-                          "Identifier": {
-                            "name": "result",
-                            "id": 53
+                          "Path": {
+                            "qualifier": [],
+                            "identifier": {
+                              "name": "result",
+                              "id": 64
+                            },
+                            "absolute_path": null,
+                            "id": 65
                           }
                         },
                         "type_": {
                           "Integer": "U128"
                         },
-                        "id": 54
+                        "id": 66
                       }
                     },
-                    "id": 55
+                    "id": 67
                   }
                 }
               ],
-              "id": 56
+              "id": 68
             },
-            "id": 57
+            "id": 69
           }
         ]
       ],
