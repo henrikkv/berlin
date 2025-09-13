@@ -2,12 +2,13 @@
 fn gameplay() {
     use leo_bindings::utils::*;
     use leo_bindings_credits::credits_aleo::*;
+    use snarkvm::console::network::TestnetV0;
     use std::str::FromStr;
     use war_bindings::war_game_aleo::*;
 
     const ENDPOINT: &str = "http://localhost:3030";
     let rng = &mut rand::thread_rng();
-    let alice =
+    let alice: Account<TestnetV0> =
         Account::from_str("APrivateKey1zkp8CZNn3yeCseEtxuVPbDCwSyhGW6yZKUYKfgXmcpoGPWH").unwrap();
     let bob = Account::new(rng).unwrap();
     let credits = credits::new(&alice, ENDPOINT).unwrap();
@@ -19,14 +20,14 @@ fn gameplay() {
     let war = war_game::new(&alice, ENDPOINT).unwrap();
 
     let (mut alice_keys, _) = war.create_game(&alice, 1, 1, 2, 3, 5, 29, 91).unwrap();
-    let game = war.get_games(1).unwrap().unwrap();
+    let game = war.get_games(1).unwrap();
 
     let deck = [game.cards_p1, game.cards_p2];
     let (mut bob_keys, _) = war.join_game(&bob, 1, deck, 4, 5, 6, 7, 31, 91).unwrap();
 
     let mut round = 1;
     loop {
-        let game = war.get_games(1).unwrap().unwrap();
+        let game = war.get_games(1).unwrap();
 
         if game.winner != 0 {
             let winner_name = if game.winner == 1 { "Alice" } else { "Bob" };
@@ -62,27 +63,27 @@ fn gameplay() {
             war.bet(&alice, 1).unwrap();
         }
 
-        let game = war.get_games(1).unwrap().unwrap();
+        let game = war.get_games(1).unwrap();
         let card_index = (game.remaining_cards_p2 - 1) as usize;
         alice_keys = war
             .p1_reveal_p2(&alice, 1, game.cards_p2[card_index], alice_keys)
             .unwrap()
             .0;
-        let game = war.get_games(1).unwrap().unwrap();
+        let game = war.get_games(1).unwrap();
         let card_index = (game.remaining_cards_p1 - 1) as usize;
         bob_keys = war
             .p2_reveal_p1(&bob, 1, game.cards_p1[card_index], bob_keys)
             .unwrap()
             .0;
 
-        let game = war.get_games(1).unwrap().unwrap();
+        let game = war.get_games(1).unwrap();
         let card_index = (game.remaining_cards_p1 - 1) as usize;
 
         alice_keys = war
             .p1_reveal_p1(&alice, 1, game.cards_p1[card_index], alice_keys)
             .unwrap()
             .0;
-        let game = war.get_games(1).unwrap().unwrap();
+        let game = war.get_games(1).unwrap();
         let card_index = (game.remaining_cards_p2 - 1) as usize;
         bob_keys = war
             .p2_reveal_p2(&bob, 1, game.cards_p2[card_index], bob_keys)
@@ -90,7 +91,7 @@ fn gameplay() {
             .0;
 
         war.compare_cards(&alice, 1).unwrap();
-        let game = war.get_games(1).unwrap().unwrap();
+        let game = war.get_games(1).unwrap();
         let alice_final_card = game.cards_p1[card_index];
         let bob_final_card = game.cards_p2[card_index];
         println!(
