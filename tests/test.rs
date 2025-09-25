@@ -1,10 +1,10 @@
 #[test]
 fn gameplay() {
     use leo_bindings::utils::*;
-    use leo_bindings_credits::credits_aleo::*;
+    use leo_bindings_credits::credits_testnet::*;
     use snarkvm::console::network::TestnetV0;
     use std::str::FromStr;
-    use war_bindings::war_game_aleo::*;
+    use war_bindings::war_game_testnet::*;
 
     const ENDPOINT: &str = "http://localhost:3030";
     let rng = &mut rand::thread_rng();

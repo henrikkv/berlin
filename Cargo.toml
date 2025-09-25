@@ -7,6 +7,13 @@ edition = "2024"
 name = "war_bindings"
 path = "lib.rs"
 
+[features]
+default = ["testnet"]
+mainnet = []
+testnet = []
+canary = []
+interpreter = []
+
 [dependencies]
 leo-bindings = { git = "https://github.com/henrikkv/leo-bindings" }
 leo-bindings-credits = { git = "https://github.com/henrikkv/leo-bindings" }
