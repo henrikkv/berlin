@@ -252,7 +252,7 @@ program war_game.aleo {
             (game.remaining_cards_p2 == 7u8) ? card_decrypted : game.cards_p2[6u8],
             (game.remaining_cards_p2 == 8u8) ? card_decrypted : game.cards_p2[7u8],
             (game.remaining_cards_p2 == 9u8) ? card_decrypted : game.cards_p2[8u8],
-            (game.remaining_cards_p1 == 10u8) ? card_decrypted : game.cards_p2[9u8],
+            (game.remaining_cards_p2 == 10u8) ? card_decrypted : game.cards_p2[9u8],
             (game.remaining_cards_p2 == 11u8) ? card_decrypted : game.cards_p2[10u8],
             (game.remaining_cards_p2 == 12u8) ? card_decrypted : game.cards_p2[11u8],
             (game.remaining_cards_p2 == 13u8) ? card_decrypted : game.cards_p2[12u8],

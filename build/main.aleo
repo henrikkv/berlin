@@ -259,7 +259,7 @@ finalize p1_reveal_p2:
     ternary r48 r3 r4.cards_p2[7u32] into r49;
     is.eq r4.remaining_cards_p2 9u8 into r50;
     ternary r50 r3 r4.cards_p2[8u32] into r51;
-    is.eq r4.remaining_cards_p1 10u8 into r52;
+    is.eq r4.remaining_cards_p2 10u8 into r52;
     ternary r52 r3 r4.cards_p2[9u32] into r53;
     is.eq r4.remaining_cards_p2 11u8 into r54;
     ternary r54 r3 r4.cards_p2[10u32] into r55;

@@ -99,9 +99,9 @@ checksum = "683d7910e743518b0e34f1186f92494becacb047c7b6bf616c96772180fef923"
 
 [[package]]
 name = "anstream"
-version = "0.6.20"
+version = "0.6.21"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3ae563653d1938f79b1ab1b5e668c87c76a9930414574a6583a7b7e11a8e6192"
+checksum = "43d5b281e737544384e969a5ccad3f1cdd24b48086a0fc1b2a5262a26b8f4f4a"
 dependencies = [
  "anstyle",
  "anstyle-parse",
@@ -1459,7 +1459,7 @@ checksum = "bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe"
 [[package]]
 name = "leo-ast"
 version = "3.2.0"
-source = "git+https://github.com/henrikkv/leo#fd76b748daa207a6a4505c52fb77f18f6d43d280"
+source = "git+https://github.com/henrikkv/leo#32c2afc92136dc22af91a9e962978e5debd04bf4"
 dependencies = [
  "anyhow",
  "indexmap",
@@ -1476,7 +1476,7 @@ dependencies = [
 [[package]]
 name = "leo-bindings"
 version = "0.1.0"
-source = "git+https://github.com/henrikkv/leo-bindings#861098da2a41384bd3486048c9789462b54d1068"
+source = "git+https://github.com/henrikkv/leo-bindings#2b16768f00ad7b4005def36d94fa4be757507d17"
 dependencies = [
  "aleo-std",
  "anyhow",
@@ -1503,7 +1503,7 @@ dependencies = [
 [[package]]
 name = "leo-bindings-core"
 version = "0.1.0"
-source = "git+https://github.com/henrikkv/leo-bindings#861098da2a41384bd3486048c9789462b54d1068"
+source = "git+https://github.com/henrikkv/leo-bindings#2b16768f00ad7b4005def36d94fa4be757507d17"
 dependencies = [
  "aleo-std",
  "anyhow",
@@ -1511,6 +1511,12 @@ dependencies = [
  "convert_case",
  "http",
  "indexmap",
+ "leo-ast",
+ "leo-errors",
+ "leo-interpreter",
+ "leo-package",
+ "leo-parser",
+ "leo-span",
  "num-format",
  "proc-macro2",
  "quote 1.0.41",
@@ -1523,7 +1529,7 @@ dependencies = [
 [[package]]
 name = "leo-bindings-credits"
 version = "0.1.0"
-source = "git+https://github.com/henrikkv/leo-bindings#861098da2a41384bd3486048c9789462b54d1068"
+source = "git+https://github.com/henrikkv/leo-bindings#2b16768f00ad7b4005def36d94fa4be757507d17"
 dependencies = [
  "leo-bindings",
 ]
@@ -1531,7 +1537,7 @@ dependencies = [
 [[package]]
 name = "leo-bindings-macro"
 version = "0.1.0"
-source = "git+https://github.com/henrikkv/leo-bindings#861098da2a41384bd3486048c9789462b54d1068"
+source = "git+https://github.com/henrikkv/leo-bindings#2b16768f00ad7b4005def36d94fa4be757507d17"
 dependencies = [
  "leo-bindings-core",
  "proc-macro2",
@@ -1543,7 +1549,7 @@ dependencies = [
 [[package]]
 name = "leo-errors"
 version = "3.2.0"
-source = "git+https://github.com/henrikkv/leo#fd76b748daa207a6a4505c52fb77f18f6d43d280"
+source = "git+https://github.com/henrikkv/leo#32c2afc92136dc22af91a9e962978e5debd04bf4"
 dependencies = [
  "anyhow",
  "backtrace",
@@ -1559,7 +1565,7 @@ dependencies = [
 [[package]]
 name = "leo-interpreter"
 version = "3.2.0"
-source = "git+https://github.com/henrikkv/leo#fd76b748daa207a6a4505c52fb77f18f6d43d280"
+source = "git+https://github.com/henrikkv/leo#32c2afc92136dc22af91a9e962978e5debd04bf4"
 dependencies = [
  "colored 2.2.0",
  "crossterm",
@@ -1579,7 +1585,7 @@ dependencies = [
 [[package]]
 name = "leo-package"
 version = "3.2.0"
-source = "git+https://github.com/henrikkv/leo#fd76b748daa207a6a4505c52fb77f18f6d43d280"
+source = "git+https://github.com/henrikkv/leo#32c2afc92136dc22af91a9e962978e5debd04bf4"
 dependencies = [
  "indexmap",
  "leo-ast",
@@ -1595,7 +1601,7 @@ dependencies = [
 [[package]]
 name = "leo-parser"
 version = "3.2.0"
-source = "git+https://github.com/henrikkv/leo#fd76b748daa207a6a4505c52fb77f18f6d43d280"
+source = "git+https://github.com/henrikkv/leo#32c2afc92136dc22af91a9e962978e5debd04bf4"
 dependencies = [
  "indexmap",
  "itertools 0.13.0",
@@ -1609,7 +1615,7 @@ dependencies = [
 [[package]]
 name = "leo-parser-lossless"
 version = "3.2.0"
-source = "git+https://github.com/henrikkv/leo#fd76b748daa207a6a4505c52fb77f18f6d43d280"
+source = "git+https://github.com/henrikkv/leo#32c2afc92136dc22af91a9e962978e5debd04bf4"
 dependencies = [
  "itertools 0.13.0",
  "lalrpop",
@@ -1623,7 +1629,7 @@ dependencies = [
 [[package]]
 name = "leo-span"
 version = "3.2.0"
-source = "git+https://github.com/henrikkv/leo#fd76b748daa207a6a4505c52fb77f18f6d43d280"
+source = "git+https://github.com/henrikkv/leo#32c2afc92136dc22af91a9e962978e5debd04bf4"
 dependencies = [
  "fxhash",
  "indexmap",
@@ -2468,9 +2474,9 @@ dependencies = [
 
 [[package]]
 name = "rustls-webpki"
-version = "0.103.6"
+version = "0.103.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8572f3c2cb9934231157b45499fc41e1f58c589fdfb81a844ba873265e80f8eb"
+checksum = "e10b3f4191e8a80e6b43eebabfac91e5dcecebb27a71f04e820c47ec41d314bf"
 dependencies = [
  "ring",
  "rustls-pki-types",
@@ -4041,9 +4047,9 @@ checksum = "e421abadd41a4225275504ea4d6566923418b7f05506fbc9c0fe86ba7396114b"
 
 [[package]]
 name = "typenum"
-version = "1.18.0"
+version = "1.19.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1dccffe3ce07af9386bfd29e80c0ab1a8205a2fc34e4bcd40364df902cfa8f3f"
+checksum = "562d481066bde0658276a35467c4af00bdc6ee726305698a55b86e61d7ad82bb"
 
 [[package]]
 name = "unicode-ident"
