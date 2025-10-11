@@ -135,3 +135,6 @@ function test_exp_by_squaring:
     call exp_by_squaring r4 r2 r3 into r5;
     output r4 as u128.private;
     output r5 as u128.private;
+
+constructor:
+    assert.eq edition 0u16;
