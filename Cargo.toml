@@ -3,12 +3,9 @@ name = "war"
 version = "0.1.0"
 edition = "2024"
 
-[lib]
-name = "war_bindings"
-path = "lib.rs"
-
 [dependencies]
 leo-bindings = { git = "https://github.com/henrikkv/leo-bindings" }
-leo-bindings-credits = { git = "https://github.com/henrikkv/leo-bindings" }
+credits_bindings = { git = "https://github.com/henrikkv/leo-bindings" }
+war_game_bindings = { path = "leo" }
 rand = "0.8"
 snarkvm = "4.2.1"

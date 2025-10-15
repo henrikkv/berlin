@@ -1,8 +1,8 @@
+use credits_bindings::credits::*;
 use leo_bindings::utils::*;
-use leo_bindings_credits::credits::*;
 use snarkvm::prelude::Network;
 use std::str::FromStr;
-use war_bindings::war_game::*;
+use war_game_bindings::war_game::*;
 
 const ENDPOINT: &str = "http://localhost:3030";
 const PRIVATE_KEY: &str = "APrivateKey1zkp8CZNn3yeCseEtxuVPbDCwSyhGW6yZKUYKfgXmcpoGPWH";

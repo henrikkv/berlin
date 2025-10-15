@@ -1,0 +1,11 @@
+[package]
+name = "zk_deck_shuffle_bindings"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "zk_deck_shuffle_bindings"
+path = "lib.rs"
+
+[dependencies]
+leo-bindings.workspace = true

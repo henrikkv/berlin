@@ -1,0 +1,11 @@
+target/
+registry/
+Cargo.lock
+
+build/*
+!build/
+!build/main.aleo
+
+outputs/*
+!outputs/
+!outputs/war_game.initial.json

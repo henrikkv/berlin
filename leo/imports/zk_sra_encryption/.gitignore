@@ -1,0 +1,11 @@
+target/
+registry/
+Cargo.lock
+
+build/*
+!build/
+!build/main.aleo
+
+outputs/*
+!outputs/
+!outputs/zk_sra_encryption.initial.json

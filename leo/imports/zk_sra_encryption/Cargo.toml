@@ -1,0 +1,11 @@
+[package]
+name = "zk_sra_encryption_bindings"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "zk_sra_encryption_bindings"
+path = "lib.rs"
+
+[dependencies]
+leo-bindings.workspace = true
