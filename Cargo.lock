@@ -536,9 +536,13 @@ dependencies = [
 [[package]]
 name = "credits_bindings"
 version = "0.1.0"
-source = "git+https://github.com/henrikkv/leo-bindings#f0a38141d860860814a85718b552488fbec65a1a"
+source = "git+https://github.com/henrikkv/leo-bindings#8b221233d65b8507615cab108b44810a746449b5"
 dependencies = [
  "leo-bindings",
+ "leo-bindings-core",
+ "rand 0.8.5",
+ "serde_json",
+ "snarkvm",
 ]
 
 [[package]]
@@ -1484,7 +1488,7 @@ dependencies = [
 [[package]]
 name = "leo-bindings"
 version = "0.1.0"
-source = "git+https://github.com/henrikkv/leo-bindings#f0a38141d860860814a85718b552488fbec65a1a"
+source = "git+https://github.com/henrikkv/leo-bindings#8b221233d65b8507615cab108b44810a746449b5"
 dependencies = [
  "aleo-std",
  "anyhow",
@@ -1513,7 +1517,7 @@ dependencies = [
 [[package]]
 name = "leo-bindings-core"
 version = "0.1.0"
-source = "git+https://github.com/henrikkv/leo-bindings#f0a38141d860860814a85718b552488fbec65a1a"
+source = "git+https://github.com/henrikkv/leo-bindings#8b221233d65b8507615cab108b44810a746449b5"
 dependencies = [
  "aleo-std",
  "anyhow",
@@ -1540,7 +1544,7 @@ dependencies = [
 [[package]]
 name = "leo-bindings-macro"
 version = "0.1.0"
-source = "git+https://github.com/henrikkv/leo-bindings#f0a38141d860860814a85718b552488fbec65a1a"
+source = "git+https://github.com/henrikkv/leo-bindings#8b221233d65b8507615cab108b44810a746449b5"
 dependencies = [
  "leo-bindings-core",
  "proc-macro2",
@@ -4227,7 +4231,9 @@ version = "0.1.0"
 dependencies = [
  "credits_bindings",
  "leo-bindings",
+ "leo-bindings-core",
  "rand 0.8.5",
+ "serde_json",
  "snarkvm",
  "zk_deck_shuffle_bindings",
  "zk_sra_encryption_bindings",
@@ -4721,6 +4727,8 @@ name = "zk_deck_shuffle_bindings"
 version = "0.1.0"
 dependencies = [
  "leo-bindings",
+ "leo-bindings-core",
+ "serde_json",
 ]
 
 [[package]]
@@ -4728,4 +4736,6 @@ name = "zk_sra_encryption_bindings"
 version = "0.1.0"
 dependencies = [
  "leo-bindings",
+ "leo-bindings-core",
+ "serde_json",
 ]

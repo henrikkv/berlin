@@ -1,0 +1,437 @@
+{
+  "program_name": "war_game",
+  "imports": [
+    "zk_sra_encryption",
+    "zk_deck_shuffle",
+    "credits"
+  ],
+  "records": [
+    {
+      "name": "Keys",
+      "members": [
+        {
+          "name": "owner",
+          "type": "Address",
+          "mode": "None"
+        },
+        {
+          "name": "e",
+          "type": "u128",
+          "mode": "None"
+        },
+        {
+          "name": "d",
+          "type": "u128",
+          "mode": "None"
+        },
+        {
+          "name": "n",
+          "type": "u128",
+          "mode": "None"
+        }
+      ],
+      "is_record": true
+    }
+  ],
+  "structs": [
+    {
+      "name": "Game",
+      "members": [
+        {
+          "name": "player1",
+          "type": "Address",
+          "mode": "None"
+        },
+        {
+          "name": "player2",
+          "type": "Address",
+          "mode": "None"
+        },
+        {
+          "name": "cards_p1",
+          "type": "[u128; 14]",
+          "mode": "None"
+        },
+        {
+          "name": "cards_p2",
+          "type": "[u128; 14]",
+          "mode": "None"
+        },
+        {
+          "name": "chips_p1",
+          "type": "i8",
+          "mode": "None"
+        },
+        {
+          "name": "chips_p2",
+          "type": "i8",
+          "mode": "None"
+        },
+        {
+          "name": "turn",
+          "type": "u8",
+          "mode": "None"
+        },
+        {
+          "name": "war",
+          "type": "u8",
+          "mode": "None"
+        },
+        {
+          "name": "remaining_cards_p1",
+          "type": "u8",
+          "mode": "None"
+        },
+        {
+          "name": "remaining_cards_p2",
+          "type": "u8",
+          "mode": "None"
+        },
+        {
+          "name": "first_move_done",
+          "type": "Boolean",
+          "mode": "None"
+        },
+        {
+          "name": "p1_must_reveal_p1",
+          "type": "Boolean",
+          "mode": "None"
+        },
+        {
+          "name": "p1_must_reveal_p2",
+          "type": "Boolean",
+          "mode": "None"
+        },
+        {
+          "name": "p2_must_reveal_p2",
+          "type": "Boolean",
+          "mode": "None"
+        },
+        {
+          "name": "p2_must_reveal_p1",
+          "type": "Boolean",
+          "mode": "None"
+        },
+        {
+          "name": "must_compare",
+          "type": "Boolean",
+          "mode": "None"
+        },
+        {
+          "name": "winner",
+          "type": "u8",
+          "mode": "None"
+        }
+      ],
+      "is_record": false
+    }
+  ],
+  "mappings": [
+    {
+      "name": "games",
+      "key_type": "u32",
+      "value_type": "Game"
+    }
+  ],
+  "functions": [
+    {
+      "name": "create_game",
+      "inputs": [
+        {
+          "name": "game_id",
+          "type": "u32",
+          "mode": "None"
+        },
+        {
+          "name": "element1",
+          "type": "i8",
+          "mode": "None"
+        },
+        {
+          "name": "element2",
+          "type": "i8",
+          "mode": "None"
+        },
+        {
+          "name": "element3",
+          "type": "i8",
+          "mode": "None"
+        },
+        {
+          "name": "e",
+          "type": "u128",
+          "mode": "None"
+        },
+        {
+          "name": "d",
+          "type": "u128",
+          "mode": "None"
+        },
+        {
+          "name": "n",
+          "type": "u128",
+          "mode": "None"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "Keys",
+          "mode": "None"
+        },
+        {
+          "type": "Future",
+          "mode": "None"
+        }
+      ],
+      "is_async": true
+    },
+    {
+      "name": "join_game",
+      "inputs": [
+        {
+          "name": "game_id",
+          "type": "u32",
+          "mode": "None"
+        },
+        {
+          "name": "deck",
+          "type": "[[u128; 14]; 2]",
+          "mode": "None"
+        },
+        {
+          "name": "element1",
+          "type": "i8",
+          "mode": "None"
+        },
+        {
+          "name": "element2",
+          "type": "i8",
+          "mode": "None"
+        },
+        {
+          "name": "element3",
+          "type": "i8",
+          "mode": "None"
+        },
+        {
+          "name": "e",
+          "type": "u128",
+          "mode": "None"
+        },
+        {
+          "name": "d",
+          "type": "u128",
+          "mode": "None"
+        },
+        {
+          "name": "n",
+          "type": "u128",
+          "mode": "None"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "Keys",
+          "mode": "None"
+        },
+        {
+          "type": "Future",
+          "mode": "None"
+        }
+      ],
+      "is_async": true
+    },
+    {
+      "name": "bet",
+      "inputs": [
+        {
+          "name": "game_id",
+          "type": "u32",
+          "mode": "None"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "Future",
+          "mode": "None"
+        }
+      ],
+      "is_async": true
+    },
+    {
+      "name": "fold",
+      "inputs": [
+        {
+          "name": "game_id",
+          "type": "u32",
+          "mode": "None"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "Future",
+          "mode": "None"
+        }
+      ],
+      "is_async": true
+    },
+    {
+      "name": "p1_reveal_p2",
+      "inputs": [
+        {
+          "name": "game_id",
+          "type": "u32",
+          "mode": "None"
+        },
+        {
+          "name": "card_encrypted",
+          "type": "u128",
+          "mode": "None"
+        },
+        {
+          "name": "keys",
+          "type": "Keys",
+          "mode": "None"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "Keys",
+          "mode": "None"
+        },
+        {
+          "type": "Future",
+          "mode": "None"
+        }
+      ],
+      "is_async": true
+    },
+    {
+      "name": "p1_reveal_p1",
+      "inputs": [
+        {
+          "name": "game_id",
+          "type": "u32",
+          "mode": "None"
+        },
+        {
+          "name": "card_encrypted",
+          "type": "u128",
+          "mode": "None"
+        },
+        {
+          "name": "keys",
+          "type": "Keys",
+          "mode": "None"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "Keys",
+          "mode": "None"
+        },
+        {
+          "type": "Future",
+          "mode": "None"
+        }
+      ],
+      "is_async": true
+    },
+    {
+      "name": "p2_reveal_p1",
+      "inputs": [
+        {
+          "name": "game_id",
+          "type": "u32",
+          "mode": "None"
+        },
+        {
+          "name": "card_encrypted",
+          "type": "u128",
+          "mode": "None"
+        },
+        {
+          "name": "keys",
+          "type": "Keys",
+          "mode": "None"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "Keys",
+          "mode": "None"
+        },
+        {
+          "type": "Future",
+          "mode": "None"
+        }
+      ],
+      "is_async": true
+    },
+    {
+      "name": "p2_reveal_p2",
+      "inputs": [
+        {
+          "name": "game_id",
+          "type": "u32",
+          "mode": "None"
+        },
+        {
+          "name": "card_encrypted",
+          "type": "u128",
+          "mode": "None"
+        },
+        {
+          "name": "keys",
+          "type": "Keys",
+          "mode": "None"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "Keys",
+          "mode": "None"
+        },
+        {
+          "type": "Future",
+          "mode": "None"
+        }
+      ],
+      "is_async": true
+    },
+    {
+      "name": "compare_cards",
+      "inputs": [
+        {
+          "name": "game_id",
+          "type": "u32",
+          "mode": "None"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "Future",
+          "mode": "None"
+        }
+      ],
+      "is_async": true
+    },
+    {
+      "name": "claim_prize",
+      "inputs": [
+        {
+          "name": "game_id",
+          "type": "u32",
+          "mode": "None"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "Future",
+          "mode": "None"
+        }
+      ],
+      "is_async": true
+    }
+  ]
+}
