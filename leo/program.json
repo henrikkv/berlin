@@ -3,21 +3,25 @@
   "version": "0.1.0",
   "description": "",
   "license": "MIT",
+  "leo": "3.2.0",
   "dependencies": [
     {
       "name": "zk_deck_shuffle.aleo",
       "location": "local",
-      "path": "imports/zk_deck_shuffle/"
+      "path": "imports/zk_deck_shuffle/",
+      "edition": null
     },
     {
       "name": "zk_sra_encryption.aleo",
       "location": "local",
-      "path": "imports/zk_sra_encryption/"
+      "path": "imports/zk_sra_encryption/",
+      "edition": null
     },
     {
       "name": "credits.aleo",
       "location": "network",
-      "path": null
+      "path": null,
+      "edition": null
     }
   ],
   "dev_dependencies": null
